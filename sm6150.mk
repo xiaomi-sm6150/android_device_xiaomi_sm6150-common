@@ -33,6 +33,11 @@ PRODUCT_PACKAGES += \
     AntHalService-Soong \
     com.dsi.ant@1.0.vendor
 
+# ART
+ART_BUILD_TARGET_DEBUG := false
+ART_BUILD_HOST_DEBUG := false
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
@@ -109,6 +114,7 @@ PRODUCT_PACKAGES += \
 
 # Dex
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Display
 PRODUCT_PACKAGES += \
