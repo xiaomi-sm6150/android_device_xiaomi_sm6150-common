@@ -312,6 +312,11 @@
         <item>2</item> <!-- COLOR_MODE_SATURATED -->
     </integer-array>
 
+    <!-- Color mode to use when accessibility transforms are enabled. This color mode must be
+         supported by the device, but not necessarily appear in config_availableColorModes. The
+         regularly selected color mode will be used if this value is negative. -->
+    <integer name="config_accessibilityColorMode">2</integer>
+
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
          where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
