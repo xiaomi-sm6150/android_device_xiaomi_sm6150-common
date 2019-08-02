@@ -7,6 +7,5 @@
             <name>IXiaomiFingerprint</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IXiaomiFingerprint/default</fqname>
     </hal>
 </manifest>
