@@ -160,6 +160,7 @@ persist.dbg.wfc_avail_ovr=1
 # Media
 debug.stagefright.c2inputsurface=-1
 debug.stagefright.omx_default_rank=512
+vendor.media.omx=0
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
