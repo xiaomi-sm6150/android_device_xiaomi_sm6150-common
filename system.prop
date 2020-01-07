@@ -41,6 +41,9 @@ telephony.lteOnCdmaDevice=1
 # Recovery
 ro.recovery.ui.margin_height=48
 
+# Time
+persist.vendor.delta_time.enable=true
+
 # WiFi
 wifi.interface=wlan0
 
