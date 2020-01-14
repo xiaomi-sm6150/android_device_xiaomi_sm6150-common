@@ -12,6 +12,7 @@ persist.vendor.cne.feature=1
 
 # IORap
 iorapd.perfetto.enable=true
+iorapd.readahead.enable=true
 
 # Media
 media.aac_51_output_enabled=true
