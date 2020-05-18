@@ -20,7 +20,6 @@
 #include <hardware/hw_auth_token.h>
 
 #include <hardware/hardware.h>
-#include <hardware/fingerprint.h>
 #include "BiometricsFingerprint.h"
 
 #include <cutils/properties.h>
@@ -379,6 +378,10 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
             }
             break;
     }
+}
+
+Return<int32_t> BiometricsFingerprint::extCmd(int32_t cmd, int32_t param) {
+    return mDevice->extCmd(mDevice, cmd, param);
 }
 
 } // namespace implementation
