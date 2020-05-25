@@ -35,3 +35,14 @@ cc_binary {
     init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.xiaomi_sm6150-udfps.rc"],
     cflags: ["-DENABLE_UDFPS"],
 }
+
+cc_library_static {
+    name: "libudfps_extension.xiaomi_sm6150",
+    srcs: ["UdfpsExtension.cpp"],
+    include_dirs: [
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include",
+    ],
+    header_libs: [
+        "generated_kernel_headers",
+    ],
+}
