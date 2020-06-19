@@ -31,6 +31,9 @@
 # Remosaic
 /vendor/bin/remosaic_daemon                                          u:object_r:remosaic_daemon_exec:s0
 
+# Vibrator
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-01/c440000.qcom,spmi:qcom,pm6150@1:qcom,vibrator@5300/leds/vibrator/vtg_level u:object_r:sysfs_vibrator:s0
+
 # WiFi
 /vendor/bin/nv_mac                                                   u:object_r:vendor_wcnss_service_exec:s0
 

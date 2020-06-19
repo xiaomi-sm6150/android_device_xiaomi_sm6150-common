@@ -23,6 +23,8 @@ import android.content.Intent;
 import android.util.Log;
 
 import org.lineageos.settings.doze.DozeUtils;
+import org.lineageos.settings.thermal.ThermalUtils;
+import org.lineageos.settings.vibrator.VibratorSettings;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
@@ -33,5 +35,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DEBUG)
             Log.d(TAG, "Received boot completed intent");
         DozeUtils.onBootCompleted(context);
+        ThermalUtils.startService(context);
+        VibratorSettings.restoreValue(context);
     }
 }

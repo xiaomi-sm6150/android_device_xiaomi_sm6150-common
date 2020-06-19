@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.preference.PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android" 
+        android:key="vibration"
+        android:title="@string/vibration_control_title">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="vib_preference"
+        android:layout="@layout/vibration_control_slider" />
+
+    <PreferenceCategory
+    	android:key="vibration_control_footer_category">
+        <com.android.settingslib.widget.FooterPreference />
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

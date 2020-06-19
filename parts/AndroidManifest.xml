@@ -22,7 +22,12 @@
     android:sharedUserId="android.uid.system">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
@@ -35,11 +40,23 @@
         android:persistent="true">
 
         <receiver android:name=".BootCompletedReceiver">
-            <intent-filter>
+            <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".speaker.ClearSpeakerActivity" 
+            android:label="@string/clear_speaker_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.sound" />
+        </activity>
 
         <service android:name=".doze.DozeService"
                  android:permission="XiaomiDozeService">
@@ -53,6 +70,53 @@
                 <action android:name="org.lineageos.settings.device.DOZE_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+
+        <service
+            android:name=".doze.DozeTileService"
+            android:icon="@drawable/ic_doze_brightness_auto"
+            android:label="@string/doze_brightness_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+                <activity
+            android:name=".thermal.ThermalActivity"
+            android:label="@string/thermal_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/thermal_summary" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="1" />
+        </activity>
+        <service
+            android:name=".thermal.ThermalService"
+            android:permission="ThermalService">
+        </service>
+
+        <activity
+            android:name=".vibrator.VibratorSettingsActivity" 
+            android:label="@string/vibration_control_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                       android:value="com.android.settings.category.ia.sound" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/vibration_control_summary" />    
         </activity>
 
     </application>

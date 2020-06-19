@@ -62,6 +62,13 @@
                 android:title="@string/pick_up_gesture_title"
                 android:summary="@string/pick_up_gesture_summary" />
 
+        <SwitchPreference
+            android:defaultValue="false"
+            android:disableDependentsState="true"
+            android:key="gesture_raise_to_wake"
+            android:icon="@drawable/ic_doze_pickup"
+            android:title="@string/raise_to_wake_gesture_title" />
+
         </PreferenceCategory>
 
         <PreferenceCategory

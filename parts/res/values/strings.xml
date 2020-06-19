@@ -20,4 +20,30 @@
 
     <string name="doze_brightness_title">Always on brightness</string>
     <string name="doze_brightness_summary">%s mode is enabled</string>
+
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Thermal Profiles and Game Mode</string>
+    <string name="thermal_summary">Adjust per-app thermal and touchscreen profiles for optimum performance</string>
+    <string name="thermal_default">Default</string>
+    <string name="thermal_benchmark">Benchmark</string>
+    <string name="thermal_browser">Browser</string>
+    <string name="thermal_camera">Camera</string>
+    <string name="thermal_dialer">Dialer</string>
+    <string name="thermal_gaming">Gaming</string>
+    <string name="thermal_streaming">Streaming</string>
+
+    <!-- Clear Speaker -->
+    <string name="clear_speaker_title">Clear speaker</string>
+    <string name="clear_speaker_summary">Play a 30-second audio to clear the speaker</string>
+    <string name="clear_speaker_description">Run this feature once or twice if you find that your speaker is lightly blocked by dust. Set media volume to maximum.\n\nIf the speaker is blocked heavily, run this feature 2-5 times while shaking your device with the speaker facing downwards.\n\nWARNING: Ensure that any headphones are unplugged.</string>
+  
+     <!-- Raise to wake strings-->
+    <string name="raise_to_wake_gesture_title">Raise to wake</string>
+
+    <!-- Vibration -->
+    <string name="vibration_control_title">Vibration control</string>
+    <string name="vibration_control_summary">Adjust the vibration strength</string>
+    <string name="vibration_reset">The default value is set</string>
+    <string name="vibration_control_description">Define the strength of the vibration for haptic feedback, incoming call and incoming notification</string>
+    
 </resources>
