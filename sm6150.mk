@@ -141,6 +141,7 @@ PRODUCT_PACKAGES += \
 
 # Overlay
 PRODUCT_PACKAGES += \
+    AOSPAXiaomiSM6150Frameworks \
     XiaomiSM6150Frameworks \
     XiaomiSM6150SettingsProvider
 
