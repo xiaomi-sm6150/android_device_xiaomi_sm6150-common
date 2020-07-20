@@ -104,7 +104,7 @@ case "$soc_id" in
     # default sched up and down migrate values are 100 and 95
     echo 85 > /proc/sys/kernel/sched_group_downmigrate
     echo 100 > /proc/sys/kernel/sched_group_upmigrate
-    echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
+    echo 0 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
     # colocation v3 settings
     echo 740000 > /proc/sys/kernel/sched_little_cluster_coloc_fmin_khz
@@ -218,7 +218,7 @@ case "$soc_id" in
     # default sched up and down migrate values are 100 and 95
     echo 85 > /proc/sys/kernel/sched_group_downmigrate
     echo 100 > /proc/sys/kernel/sched_group_upmigrate
-    echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
+    echo 0 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
     # colocation v3 settings
     echo 740000 > /proc/sys/kernel/sched_little_cluster_coloc_fmin_khz
