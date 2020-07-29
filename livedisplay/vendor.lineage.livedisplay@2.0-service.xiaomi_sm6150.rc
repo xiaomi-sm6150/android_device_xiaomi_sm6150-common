@@ -1,6 +1,9 @@
 on boot
     chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/hbm
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/msm_fb_ea_enable
+
     chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display/hbm
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display/msm_fb_ea_enable
 
 service vendor.livedisplay-hal-2-0 /vendor/bin/hw/vendor.lineage.livedisplay@2.0-service.xiaomi_sm6150
     class hal
