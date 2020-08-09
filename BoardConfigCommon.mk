@@ -125,9 +125,6 @@ BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 # Media
 TARGET_USES_ION := true
 
-# Platform
-TARGET_BOARD_PLATFORM := sm6150
-
 # Power
 TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
 
