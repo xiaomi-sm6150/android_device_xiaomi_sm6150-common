@@ -57,4 +57,7 @@
 
     <!-- Indicates that wifi link probing is supported on this device -->
     <bool name="config_wifi_link_probing_supported">true</bool>
+
+    <!-- Enable adding minimum confirmation duration when sending network score to connectivity service. -->
+    <bool translatable="false" name="config_wifiMinConfirmationDurationSendNetworkScoreEnabled">true</bool>
 </resources>
