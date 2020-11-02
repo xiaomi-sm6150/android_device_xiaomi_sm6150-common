@@ -395,11 +395,22 @@ vendor/lib64/libdrmtime.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libhdcpsrm.so
-#vendor/lib64/liboemcrypto.so
 vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
 vendor/lib64/libssd.so
+
+# DRM widevine - from 12.0.3.0.QFJMIXM
+vendor/lib64/liboemcrypto.so|2cee717b25559030a61709e826b4a5dae6043c20
+widevine.b00:vendor/firmware/widevine.b00|00433cee9b7c59f9d628eca71dfe255459e1c860
+widevine.b01:vendor/firmware/widevine.b01|2a9d8fa41e967d790edbad2c858bdee500f2d317
+widevine.b02:vendor/firmware/widevine.b02|1d8d7519c6fb56ca3ef4e54fae30b700d856142a
+widevine.b03:vendor/firmware/widevine.b03|ee66bf2ea0961ea2387d6c0ba0cfcbc4da19ad13
+widevine.b04:vendor/firmware/widevine.b04|3dc2b4c788df1fe07623e60f3d3e69014fbcf0e4
+widevine.b05:vendor/firmware/widevine.b05|427b023f84b4529b225748bc8a8c486cd1ccb0b7
+widevine.b06:vendor/firmware/widevine.b06|d2b719ed34e99971d7dfd07d35261d568638984f
+widevine.b07:vendor/firmware/widevine.b07|7f3a106e9d58a61b7a2e8de2f3b47ec010779038
+widevine.mdt:vendor/firmware/widevine.mdt|b845e63c2736b2413435d325224871c5c1b35a50
 
 # DRM widevine
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
