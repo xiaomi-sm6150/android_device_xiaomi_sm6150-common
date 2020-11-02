@@ -261,7 +261,8 @@ PRODUCT_COPY_FILES += \
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
-    perf
+    perf \
+    wfd
 
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 
@@ -363,13 +364,3 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
     frameworks/native/data/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml
-
-# WiFi Display
-PRODUCT_PACKAGES += \
-    libavservices_minijail_32 \
-    libdisplayconfig.qti \
-    libnl \
-    libqdMetaData
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
