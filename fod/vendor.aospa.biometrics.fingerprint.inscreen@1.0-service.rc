@@ -2,8 +2,8 @@ on boot
     chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui
     chmod 0444 /sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui
 
-service vendor.fingerprint-inscreen-1-0 /vendor/bin/hw/vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.sm6150
-    interface vendor.lineage.biometrics.fingerprint.inscreen@1.0::IFingerprintInscreen default
+service vendor.fingerprint-inscreen-1-0 /system_ext/bin/hw/vendor.aospa.biometrics.fingerprint.inscreen@1.0-service.sm6150
+    interface vendor.aospa.biometrics.fingerprint.inscreen@1.0::IFingerprintInscreen default
     class hal
     user system
     group system

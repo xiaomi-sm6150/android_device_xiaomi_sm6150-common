@@ -1,0 +1,10 @@
+type sysfs_fod, sysfs_type, fs_type;
+
+allow vendor_fod_aospa sysfs_fod:file rw_file_perms;
+allow vendor_fod_aospa vendor_sysfs_graphics:file rw_file_perms;
+
+allow vendor_fod_aospa hal_fingerprint_hwservice_xiaomi:hwservice_manager find;
+allow vendor_fod_aospa hal_touchfeature_hwservice_xiaomi:hwservice_manager find;
+
+binder_call(vendor_fod_aospa, hal_fingerprint_default)
+binder_call(vendor_fod_aospa, hal_touchfeature_default)

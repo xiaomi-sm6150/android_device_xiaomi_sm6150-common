@@ -14,16 +14,16 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.sm6150",
+    name: "vendor.aospa.biometrics.fingerprint.inscreen@1.0-service",
     defaults: ["hidl_defaults"],
-    vintf_fragments: ["vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.sm6150.xml"],
-    init_rc: ["vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.sm6150.rc"],
+    vintf_fragments: ["vendor.aospa.biometrics.fingerprint.inscreen@1.0-service.xml"],
+    init_rc: ["vendor.aospa.biometrics.fingerprint.inscreen@1.0-service.rc"],
     relative_install_path: "hw",
     srcs: [
         "service.cpp",
         "FingerprintInscreen.cpp",
     ],
-    vendor: true,
+    system_ext_specific: true,
     shared_libs: [
         "libbase",
         "libhardware",
@@ -31,7 +31,7 @@ cc_binary {
         "liblog",
         "libutils",
         "vendor.goodix.hardware.biometrics.fingerprint@2.1",
-        "vendor.lineage.biometrics.fingerprint.inscreen@1.0",
+        "vendor.aospa.biometrics.fingerprint.inscreen@1.0",
         "vendor.xiaomi.hardware.fingerprintextension@1.0",
         "vendor.xiaomi.hardware.touchfeature@1.0",
     ],
@@ -42,8 +42,5 @@ cc_library_static {
     srcs: ["FodExtension.cpp"],
     include_dirs: [
         "frameworks/native/services/surfaceflinger/CompositionEngine/include",
-    ],
-    header_libs: [
-        "generated_kernel_headers",
     ],
 }

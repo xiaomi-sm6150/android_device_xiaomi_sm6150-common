@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.sm6150"
+#define LOG_TAG "vendor.aospa.biometrics.fingerprint.inscreen@1.0-service.sm6150"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
@@ -24,8 +24,8 @@
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-using vendor::lineage::biometrics::fingerprint::inscreen::V1_0::IFingerprintInscreen;
-using vendor::lineage::biometrics::fingerprint::inscreen::V1_0::implementation::FingerprintInscreen;
+using vendor::aospa::biometrics::fingerprint::inscreen::V1_0::IFingerprintInscreen;
+using vendor::aospa::biometrics::fingerprint::inscreen::V1_0::implementation::FingerprintInscreen;
 
 using android::OK;
 using android::status_t;

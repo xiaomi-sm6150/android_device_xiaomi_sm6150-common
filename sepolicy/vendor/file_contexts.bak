@@ -1,0 +1,1 @@
+/sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui                u:object_r:sysfs_fod:s0
