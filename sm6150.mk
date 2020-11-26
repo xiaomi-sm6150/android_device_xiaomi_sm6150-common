@@ -30,21 +30,15 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.soundtrigger@2.2-impl
 
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    android.hardware.bluetooth.a2dp@1.0-impl \
-    android.hardware.bluetooth.a2dp@1.0-service \
-    audio.bluetooth.default \
     audio.primary.sm6150 \
     audio.usb.default \
     audio.r_submix.default \
     audio_amplifier.sm6150
 
 PRODUCT_PACKAGES += \
-    liba2dpoffload \
     libhdmiedid \
     libhfp \
     libqcompostprocbundle \
@@ -80,6 +74,17 @@ PRODUCT_COPY_FILES += \
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.a2dp@1.0-impl \
+    android.hardware.bluetooth.a2dp@1.0-service \
+    audio.bluetooth.default
+
+PRODUCT_PACKAGES += \
+    liba2dpoffload
 
 # Camera
 PRODUCT_PACKAGES += \
