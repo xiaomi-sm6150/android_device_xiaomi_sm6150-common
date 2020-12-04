@@ -393,7 +393,7 @@ vendor/lib/vendor.qti.hardware.vpp@1.1.so
 vendor/lib/vendor.qti.hardware.vpp@1.2.so
 vendor/lib/vendor.qti.hardware.vpp@1.3.so
 
-# Perf - from LA.UM.9.1.r1-07300-SMxxx0.0
+# Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
 vendor/bin/msm_irqbalance
 vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
@@ -421,7 +421,7 @@ vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
 vendor/lib/vendor.qti.hardware.perf@2.2.so
 
-# Perf learningmodule - from LA.UM.9.1.r1-07300-SMxxx0.0
+# Perf (learningmodule)
 vendor/etc/lm/AdaptLaunchFeature.xml
 vendor/etc/lm/AppClassifierFeature.xml
 vendor/etc/lm/GameOptimizationFeature.xml
@@ -432,7 +432,7 @@ vendor/lib64/liblearningmodule.so
 vendor/lib64/libmeters-ns.so
 vendor/lib64/libmeters.so
 
-# Perf io-prefetch - from LA.UM.9.1.r1-07300-SMxxx0.0
+# Perf (io-prefetch)
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
 vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
 vendor/lib64/libqti-iopd-client.so
