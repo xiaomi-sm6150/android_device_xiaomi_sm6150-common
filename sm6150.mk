@@ -270,6 +270,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     bt \
     telephony \
     usb \
+    overlay \
     perf \
     wfd \
     wlan
