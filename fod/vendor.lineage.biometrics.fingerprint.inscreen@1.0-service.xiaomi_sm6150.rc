@@ -2,7 +2,7 @@ on boot
     chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui
     chmod 0444 /sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui
 
-service vendor.fingerprint-inscreen-1-0 /vendor/bin/hw/vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.davinci
+service vendor.fingerprint-inscreen-1-0 /vendor/bin/hw/vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_sm6150
     interface vendor.lineage.biometrics.fingerprint.inscreen@1.0::IFingerprintInscreen default
     class hal
     user system

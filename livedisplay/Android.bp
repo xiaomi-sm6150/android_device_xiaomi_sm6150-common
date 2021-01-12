@@ -14,10 +14,10 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service.davinci",
+    name: "vendor.lineage.livedisplay@2.0-service.xiaomi_sm6150",
     defaults: ["hidl_defaults"],
-    vintf_fragments: ["vendor.lineage.livedisplay@2.0-service.davinci.xml"],
-    init_rc: ["vendor.lineage.livedisplay@2.0-service.davinci.rc"],
+    vintf_fragments: ["vendor.lineage.livedisplay@2.0-service.xiaomi_sm6150.xml"],
+    init_rc: ["vendor.lineage.livedisplay@2.0-service.xiaomi_sm6150.rc"],
     relative_install_path: "hw",
     srcs: [
         "SunlightEnhancement.cpp",

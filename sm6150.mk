@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Call the proprietary setup
-$(call inherit-product, vendor/xiaomi/davinci/davinci-vendor.mk)
+$(call inherit-product, vendor/xiaomi/sm6150-common/sm6150-common-vendor.mk)
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
@@ -70,13 +70,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/configs/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
-    $(LOCAL_PATH)/configs/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/configs/audio/audio_tuning_mixer_tavil.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer_tavil.txt \
-    $(LOCAL_PATH)/configs/audio/mixer_paths_idp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_idp.xml
+    $(LOCAL_PATH)/configs/audio/audio_tuning_mixer_tavil.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer_tavil.txt
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
     $(LOCAL_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
 PRODUCT_COPY_FILES += \
@@ -119,10 +116,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
-# Camera motor
-PRODUCT_PACKAGES += \
-    vendor.xiaomi.hardware.motor@1.0.vendor
-
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
@@ -152,12 +145,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.davinci
-
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
-    vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # FM
 PRODUCT_PACKAGES += \
@@ -222,12 +211,12 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.davinci
+    android.hardware.light@2.0-service.xiaomi_sm6150
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm \
-    vendor.lineage.livedisplay@2.0-service.davinci
+    vendor.lineage.livedisplay@2.0-service.xiaomi_sm6150
 
 # Media
 PRODUCT_PACKAGES += \
@@ -265,38 +254,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
 
-# NFC
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    NfcNci \
-    SecureElement \
-    Tag
-
-PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_davinci/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_davinci/android.hardware.nfc.ese.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_davinci/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_davinci/android.hardware.nfc.hcef.xml \
-    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_davinci/android.hardware.nfc.uicc.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_davinci/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_davinci/com.nxp.mifare.xml
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage \
-    $(LOCAL_PATH)/overlay-system
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-system
 
 # Power
 PRODUCT_PACKAGES += \
