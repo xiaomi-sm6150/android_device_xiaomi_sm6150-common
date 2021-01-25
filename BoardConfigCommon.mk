@@ -16,8 +16,6 @@
 
 COMMON_PATH := device/xiaomi/sm6150-common
 
-BUILD_BROKEN_DUP_RULES := true
-
 # Inherit from proprietary files
 include vendor/xiaomi/sm6150-common/BoardConfigVendor.mk
 
