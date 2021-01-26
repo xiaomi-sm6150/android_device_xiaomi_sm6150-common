@@ -10,6 +10,7 @@ cc_binary {
         "service.cpp",
     ],
 
+    static_libs: ["vendor.xiaomi.hardware.fingerprintextension@1.0"],
     shared_libs: [
         "libcutils",
         "liblog",
@@ -17,7 +18,6 @@ cc_binary {
         "libhardware",
         "libutils",
         "android.hardware.biometrics.fingerprint@2.1",
-        "vendor.xiaomi.hardware.fingerprintextension@1.0",
     ],
 
 }
