@@ -36,7 +36,7 @@ on early-init
     write /sys/block/dm-3/queue/read_ahead_kb 2048
     write /sys/block/dm-4/queue/read_ahead_kb 2048
 
-on late-init
+on post-fs
     # Start services early for bootanim
     start surfaceflinger
     start bootanim
