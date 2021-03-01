@@ -43,8 +43,10 @@ status_t BiometricsFingerprint::registerAsSystemService() {
         ALOGI("Successfully registered IBiometricsFingerprint");
     }
 
-    if (IXiaomiFingerprint::registerAsService() != 0) {
-        ALOGW("Failed to register IXiaomiFingerprint (%d)", ret);
+    ret = IXiaomiFingerprint::registerAsService();
+    if (ret != 0) {
+        ALOGE("Failed to register IXiaomiFingerprint (%d)", ret);
+        goto fail;
     } else {
         ALOGI("Successfully registered IXiaomiFingerprint");
     }
