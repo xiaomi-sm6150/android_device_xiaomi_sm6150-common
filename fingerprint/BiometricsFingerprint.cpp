@@ -378,9 +378,11 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
     }
 }
 
+#ifdef XIAOMI_FINGERPRINTEXTENSION
 Return<int32_t> BiometricsFingerprint::extCmd(int32_t cmd, int32_t param) {
     return mDevice->extCmd(mDevice, cmd, param);
 }
+#endif /* XIAOMI_FINGERPRINTEXTENSION */
 
 } // namespace implementation
 }  // namespace V2_1
