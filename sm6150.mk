@@ -267,9 +267,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
-# Product characteristics
-PRODUCT_CHARACTERISTICS := nosdcard
-
 # QTI
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor
