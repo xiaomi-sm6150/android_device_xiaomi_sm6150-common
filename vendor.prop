@@ -104,33 +104,11 @@ persist.vendor.dpm.nsrm.bkg.evt=3955
 persist.vendor.dpmhalservice.enable=1
 
 # Display
-debug.egl.hw=0
-debug.mdpcomp.logs=0
 debug.sf.disable_backpressure=1
 debug.sf.enable_egl_image_tracker=1
 debug.sf.enable_hwc_vds=1
-debug.sf.hw=0
 debug.sf.latch_unsignaled=1
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
-ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-ro.surface_flinger.max_virtual_display_dimension=4096
-ro.surface_flinger.use_color_management=true
-ro.surface_flinger.wcg_composition_dataspace=143261696
-vendor.display.comp_mask=0
-vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
-vendor.display.disable_decimation=1
-vendor.display.disable_excl_rect=0
-vendor.display.disable_hw_recovery_dump=1
-vendor.display.disable_inline_rotator=1
 vendor.display.disable_rotator_downscale=1
-vendor.display.disable_scaler=0
-vendor.display.disable_ui_3d_tonemap=1
-vendor.display.enable_default_color_mode=1
-vendor.display.enable_null_display=0
-vendor.display.enable_optimize_refresh=1
-vendor.gralloc.disable_ubwc=0
 vendor.display.qdcm.mode_combine=1
 
 # Display - Set color mode to Adaptive by default
