@@ -245,10 +245,6 @@ PRODUCT_COPY_FILES += \
 MSMSTEPPE := sm6150
 TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service
-
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
