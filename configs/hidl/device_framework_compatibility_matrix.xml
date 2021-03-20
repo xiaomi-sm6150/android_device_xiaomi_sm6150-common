@@ -7,5 +7,9 @@
             <name>IGoodixFingerprintDaemon</name>
             <instance>default</instance>
         </interface>
+        <interface>
+            <name>IGoodixFingerprintDaemonExt</name>
+            <instance>default</instance>
+        </interface>
     </hal>
 </compatibility-matrix>
