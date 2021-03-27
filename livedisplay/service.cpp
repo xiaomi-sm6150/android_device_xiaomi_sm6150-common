@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.lineage.livedisplay@2.0-service.xiaomi_sm6150"
+#define LOG_TAG "vendor.lineage.livedisplay@2.1-service.xiaomi_sm6150"
 
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
@@ -23,10 +23,10 @@
 #include "AntiFlicker.h"
 #include "SunlightEnhancement.h"
 
-using ::vendor::lineage::livedisplay::V2_0::IAntiFlicker;
-using ::vendor::lineage::livedisplay::V2_0::ISunlightEnhancement;
-using ::vendor::lineage::livedisplay::V2_0::implementation::AntiFlicker;
-using ::vendor::lineage::livedisplay::V2_0::implementation::SunlightEnhancement;
+using ::vendor::lineage::livedisplay::V2_1::IAntiFlicker;
+using ::vendor::lineage::livedisplay::V2_1::ISunlightEnhancement;
+using ::vendor::lineage::livedisplay::V2_1::implementation::AntiFlicker;
+using ::vendor::lineage::livedisplay::V2_1::implementation::SunlightEnhancement;
 
 int main() {
     android::sp<IAntiFlicker> antiFlicker = new AntiFlicker();
