@@ -29,7 +29,7 @@ namespace V2_0 {
 namespace implementation {
 
 static constexpr const char* kAntiFlickerStatusPath =
-        "/sys/devices/platform/soc/soc:qcom,dsi-display/msm_fb_ea_enable";
+        "/sys/devices/platform/soc/soc:qcom,dsi-display/dc_enable";
 
 Return<bool> AntiFlicker::isEnabled() {
     std::string buf;
