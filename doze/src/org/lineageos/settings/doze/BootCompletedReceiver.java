@@ -15,14 +15,12 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings;
+package org.lineageos.settings.doze;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
-
-import org.lineageos.settings.doze.DozeUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;

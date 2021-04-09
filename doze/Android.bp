@@ -5,7 +5,7 @@
 //
 
 android_app {
-    name: "XiaomiParts",
+    name: "XiaomiDoze",
 
     srcs: ["src/**/*.java"],
 
