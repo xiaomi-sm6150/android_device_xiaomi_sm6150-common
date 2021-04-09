@@ -54,7 +54,7 @@ on init
     write /sys/block/sde/queue/nr_requests 256
 
 on fs
-    mount_all --early
+    mount_all --early /vendor/etc/fstab.qcom
 
     restorecon_recursive /mnt/vendor/persist
     mkdir /mnt/vendor/persist/data 0700 system system
@@ -64,7 +64,7 @@ on fs
 on late-fs
     wait_for_prop hwservicemanager.ready true
     exec_start wait_for_keymaster
-    mount_all --late
+    mount_all --late /vendor/etc/fstab.qcom
 
 on post-fs-data
     mkdir /data/vendor/nnhal 0700 system system
@@ -97,7 +97,7 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/swappiness 100
 
     # Enable ZRAM on boot_complete
-    swapon_all /vendor/etc/fstab.qcom
+    swapon_all /vendor/etc/fstab.zram
 
     # Runtime fs tuning
     write /sys/block/sda/queue/read_ahead_kb 128
