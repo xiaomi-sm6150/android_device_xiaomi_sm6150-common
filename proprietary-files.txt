@@ -614,8 +614,5 @@ vendor/lib/libwfdutils_proprietary.so
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
-# WLAN
-vendor/bin/cnss-daemon
-
 # Xiaomi MAC
 vendor/bin/nv_mac
