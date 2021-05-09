@@ -93,19 +93,14 @@ vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 camera.disable_zsl_mode=1
-
-# Data modules
-persist.vendor.data.iwlan.enable=true
-persist.vendor.data.mode=concurrent
-ro.telephony.iwlan_operation_mode=legacy
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
 
 # DPM
-persist.vendor.dpm.nsrm.bkg.evt=3955
 persist.vendor.dpmhalservice.enable=1
 
 # Display
 debug.sf.disable_backpressure=1
-debug.sf.enable_egl_image_tracker=1
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
 vendor.display.disable_rotator_downscale=1
@@ -116,12 +111,14 @@ persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=2
 persist.sys.sf.color_mode=9
 
+# DRM
+drm.service.enabled=true
+
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # LMKD
 ro.config.low_ram=false
-ro.lmk.log_stats=true
 
 # IMS
 persist.dbg.volte_avail_ovr=1
@@ -135,24 +132,34 @@ persist.vendor.ims.disableQXDMLogs=1
 # Incremental FS
 ro.incremental.enable=1
 
+# Keystore
+ro.hardware.keystore_desede=true
+
+# IWLAN
+persist.vendor.data.iwlan.enable=true
+ro.telephony.iwlan_operation_mode=legacy
+
+# Netflix
+vendor.netflix.bsp_rev=Q6150-17263-1
+
 # Perf
 ro.vendor.perf.scroll_opt=true
 
 # Radio
 persist.vendor.radio.add_power_save=1
-persist.vendor.radio.apm_sim_not_pwdn=1
-persist.vendor.radio.custom_ecc=1
-persist.vendor.radio.data_ltd_sys_ind=1
-persist.vendor.radio.dynamic_sar=1
-persist.vendor.radio.enableadvancedscan=true
-persist.vendor.radio.force_ltd_sys_ind=1
+persist.vendor.radio.atfwd.start=true
+persist.vendor.radio.data_con_rprt=1
 persist.vendor.radio.force_on_dc=true
 persist.vendor.radio.manual_nw_rej_ct=1
-persist.vendor.radio.procedure_bytes=SKIP
-persist.vendor.radio.rat_on=combine
+persist.vendor.radio.mt_sms_ack=30
+persist.vendor.radio.process_sups_ind=1
 persist.vendor.radio.redir_party_num=1
 persist.vendor.radio.report_codec=1
-persist.vendor.radio.sib16_support=1
 
-# WiFi
-wifi.aware.interface=wifi-aware0
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true
+
+# ZRAM
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=180
+ro.zram.periodic_wb_delay_hours=24
