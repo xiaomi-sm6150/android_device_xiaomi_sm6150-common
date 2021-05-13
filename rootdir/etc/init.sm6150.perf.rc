@@ -1,0 +1,101 @@
+# Copyright (C) 2021 Paranoid Android
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+on early-init 
+    # Boot time scheduler tuning
+    write /dev/stune/schedtune.boost 50
+    write /dev/stune/schedtune.prefer_idle 1
+
+    # Boot time fs tuning
+    write /sys/block/sda/queue/iostats 0
+    write /sys/block/sda/queue/read_ahead_kb 2048
+    write /sys/block/sda/queue/nr_requests 256
+    write /sys/block/sde/queue/iostats 0
+    write /sys/block/sde/queue/read_ahead_kb 2048
+    write /sys/block/sde/queue/nr_requests 256
+    write /sys/block/sdf/queue/iostats 0
+    write /sys/block/sdf/queue/read_ahead_kb 2048
+    write /sys/block/sdf/queue/nr_requests 256
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk0/queue/read_ahead_kb 2048
+    write /sys/block/mmcblk0/queue/nr_requests 256
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+    write /sys/block/dm-1/queue/read_ahead_kb 2048
+    write /sys/block/dm-2/queue/read_ahead_kb 2048
+    write /sys/block/dm-3/queue/read_ahead_kb 2048
+    write /sys/block/dm-4/queue/read_ahead_kb 2048
+
+on late-init
+    # Start services early for bootanim
+    start surfaceflinger
+    start bootanim
+    start vendor.hwcomposer-2-4
+    start vendor.configstore-hal
+    start vendor.qti.hardware.display.allocator
+
+on property:vendor.post_boot.parsed=1
+    # Setup runtime cpusets
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-5,7
+    write /dev/cpuset/background/cpus 2-5
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 2-5
+
+    # Configure CPU frequencies
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 1017600
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq 1497600
+    write /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq 979200
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_freq 1555200
+
+    # Configure governor parameters
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl 1
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/pl 1
+
+    # Configure CPU input boost
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800 6:1324800"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 100
+    write /sys/module/cpu_boost/parameters/powerkey_input_boost_freq "0:1804800 6:2169600"
+    write /sys/module/cpu_boost/parameters/powerkey_input_boost_ms 500
+
+    # Configure scheduler parameters
+    write /proc/sys/kernel/sched_downmigrate 85
+    write /proc/sys/kernel/sched_upmigrate 95
+    write /proc/sys/kernel/sched_child_runs_first 1
+    write /proc/sys/kernel/sched_tunable_scaling 1
+    write /proc/sys/kernel/sched_conservative_pl 1
+
+    # Setup default schedtune values for foreground/top-app
+    write /dev/stune/schedtune.boost 0
+    write /dev/stune/schedtune.prefer_idle 0
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 1
+
+    # Report max frequency to unity tasks
+    write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so"
+    write /proc/sys/kernel/sched_lib_mask_force 255
+
+    # Runtime fs tuning
+    # Skip restoring readahead as its done from init.aospa.perf.rc
+    write /sys/block/sda/queue/nr_requests 128
+    write /sys/block/sde/queue/nr_requests 128
+    write /sys/block/sdf/queue/nr_requests 128
+
+on property:persist.sys.device_provisioned=1
+    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,7
+    setprop dalvik.vm.dex2oat-threads 6
