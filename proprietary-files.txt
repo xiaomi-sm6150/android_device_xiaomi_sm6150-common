@@ -354,6 +354,7 @@ vendor/lib64/libqtikeymaster4.so
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.sm6150.so
+vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
 # Media
