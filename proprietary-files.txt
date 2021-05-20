@@ -52,6 +52,12 @@ vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 # ANT+
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
+# Audio FX modules
+system_ext/etc/permissions/audiosphere.xml
+system_ext/framework/audiosphere.jar
+vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libshoebox.so
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
