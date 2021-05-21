@@ -47,7 +47,7 @@ def update():
 
         # Check if we need to set SHA1 hash for the next files
         if line[0] == '#':
-            needSHA1 = (' - from' in line)
+            needSHA1 = (' - from' not in line)
             continue
 
         if needSHA1:
