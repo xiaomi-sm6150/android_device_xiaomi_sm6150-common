@@ -156,9 +156,3 @@ service vendor.remosaic_daemon /vendor/bin/remosaic_daemon
     user camera
     group camera
     writepid /dev/cpuset/system-background/tasks
-
-service vendor.nv_mac /vendor/bin/nv_mac
-    class main
-    user system
-    group system inet net_admin wifi net_raw
-    oneshot
