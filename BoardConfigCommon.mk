@@ -94,6 +94,9 @@ TARGET_DISABLED_UBWC := true
 # Platform
 TARGET_BOARD_PLATFORM := sm6150
 
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
