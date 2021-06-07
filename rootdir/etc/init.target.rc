@@ -124,6 +124,10 @@ on boot
     # USB controller configuration
     setprop sys.usb.configfs 1
 
+    # Touchpanel
+    chmod 0660 /sys/touchpanel/double_tap
+    chown system system /sys/touchpanel/double_tap
+
 on property:sys.boot_completed=1
     # Set allocstall_threshold to 0
     # Set swappiness to 100
