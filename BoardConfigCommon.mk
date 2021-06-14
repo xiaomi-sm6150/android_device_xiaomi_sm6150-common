@@ -68,10 +68,6 @@ BOARD_HAVE_QCOM_FM := true
 # Gestures
 TARGET_TAP_TO_WAKE_EVENT_NODE  := "/dev/input/event3"
 
-# GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
-LOC_HIDL_VERSION := 4.0
-
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/hidl/manifest.xml
 DEVICE_MANIFEST_FILE += hardware/qcom/media/conf_files/sm6150/c2_manifest.xml
