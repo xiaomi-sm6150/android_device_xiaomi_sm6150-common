@@ -157,9 +157,6 @@ persist.dbg.wfc_avail_ovr=1
 debug.stagefright.ccodec=1
 debug.stagefright.omx_default_rank=0
 
-# QC framework value-adds
-ro.vendor.qti.va_aosp.support=1
-
 # Radio
 persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.custom_ecc=1
