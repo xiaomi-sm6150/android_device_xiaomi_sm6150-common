@@ -205,7 +205,16 @@ vendor/bin/loc_launcher
 vendor/bin/lowi-server
 vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
+vendor/bin/xtwifi-client
+vendor/bin/xtwifi-inet-agent
+vendor/etc/apdr.conf
+vendor/etc/cacert_location.pem
+vendor/etc/izat.conf
+vendor/etc/lowi.conf
+vendor/etc/sap.conf
 -vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
+vendor/etc/xtra_root_cert.pem
+vendor/etc/xtwifi.conf
 vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so
 vendor/lib64/libcdfw.so
 vendor/lib64/libdataitems.so

@@ -68,10 +68,6 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
 # FM
 BOARD_HAVE_QCOM_FM := true
 
-# GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
-LOC_HIDL_VERSION := 4.0
-
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/hidl/manifest.xml
 DEVICE_MANIFEST_FILE += hardware/qcom/media/conf_files/sm6150/c2_manifest.xml
