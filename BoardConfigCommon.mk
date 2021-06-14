@@ -70,7 +70,6 @@ TARGET_TAP_TO_WAKE_EVENT_NODE  := "/dev/input/event3"
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/hidl/manifest.xml
-DEVICE_MANIFEST_FILE += hardware/qcom/media/conf_files/sm6150/c2_manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/hidl/compatibility_matrix.xml
 ODM_MANIFEST_FILES += $(COMMON_PATH)/configs/hidl/manifest-qva.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
@@ -111,9 +110,6 @@ BOARD_BOOTIMG_HEADER_VERSION := 1
 endif
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
-
-# Media
-TARGET_USES_ION := true
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
