@@ -138,9 +138,6 @@ ro.incremental.enable=1
 # Perf
 ro.vendor.perf.scroll_opt=true
 
-# QC framework value-adds
-ro.vendor.qti.va_aosp.support=1
-
 # Radio
 persist.vendor.radio.add_power_save=1
 persist.vendor.radio.apm_sim_not_pwdn=1
