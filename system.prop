@@ -40,7 +40,6 @@ ro.sensor.proximity=true
 persist.rcs.supported=1
 
 # Radio
-persist.radio.multisim.config=dsds
 persist.radio.NO_STAPA=1
 persist.radio.VT_CAM_INTERFACE=1
 persist.radio.VT_HYBRID_ENABLE=1
