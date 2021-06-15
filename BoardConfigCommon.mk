@@ -59,9 +59,6 @@ WITH_DEXPREOPT_DEBUG_INFO := false
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# FM
-BOARD_HAVE_QCOM_FM := true
-
 # Gestures
 TARGET_TAP_TO_WAKE_EVENT_NODE  := "/dev/input/event3"
 
