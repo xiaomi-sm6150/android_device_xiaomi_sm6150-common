@@ -48,7 +48,8 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.bluetooth.default \
     audio.usb.default \
-    audio.r_submix.default
+    audio.r_submix.default \
+    sound_trigger.primary.sm6150
 
 PRODUCT_PACKAGES += \
     libqcompostprocbundle \
