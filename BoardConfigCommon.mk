@@ -118,7 +118,6 @@ endif
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 # Media
-TARGET_USES_ION := true
 TARGET_DISABLED_UBWC := true
 
 # Power
