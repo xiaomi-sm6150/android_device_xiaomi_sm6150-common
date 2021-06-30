@@ -407,8 +407,6 @@ vendor/lib64/libqcmaputils.so
 vendor/lib64/libqcrildatactl.so
 vendor/lib64/libqcrilFramework.so
 vendor/lib64/libqdi.so
-vendor/lib64/libqdp.so
-vendor/lib64/libril-qc-hal-qmi.so
 vendor/lib64/libril-qc-logger.so
 vendor/lib64/librilqmiservices.so
 vendor/lib64/libsystem_health_mon.so
@@ -443,6 +441,10 @@ vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql
+
+# RIL - from LA.UM.9.1.r1-07300-SMxxx0.0
+vendor/lib64/libqdp.so|3e4a0e68a4e38ad722d0f9091840396fe9420edd
+vendor/lib64/libril-qc-hal-qmi.so|24cba6ddab2a101ef1c23089246780184c52f58e
 
 # Soter
 -app/SoterService/SoterService.apk
