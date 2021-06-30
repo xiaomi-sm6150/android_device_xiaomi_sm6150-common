@@ -95,7 +95,6 @@ BOARD_KERNEL_CMDLINE += loop.max_part=7
 TARGET_KERNEL_APPEND_DTB := true
 
 # Media
-TARGET_USES_ION := true
 TARGET_DISABLED_UBWC := true
 
 # Power
