@@ -128,10 +128,6 @@ PRODUCT_PACKAGES += \
 # GPS
 LOC_HIDL_VERSION = 4.0
 
-# Handheld hardware
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
