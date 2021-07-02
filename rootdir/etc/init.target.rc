@@ -82,7 +82,9 @@ on boot
 
     # Set doze mode permissions
     chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/doze_mode
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/doze_status
     chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display/doze_mode
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display/doze_status
 
 on property:sys.boot_completed=1
     # Set allocstall_threshold to 0
