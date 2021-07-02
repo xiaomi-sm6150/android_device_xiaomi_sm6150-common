@@ -1,0 +1,3 @@
+type sysfs_doze, sysfs_type, fs_type;
+
+allow system_app sysfs_doze:file rw_file_perms;

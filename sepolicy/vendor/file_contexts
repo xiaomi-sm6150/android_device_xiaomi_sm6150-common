@@ -8,6 +8,7 @@
 /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/soc:qcom,dsi-display/dc_enable             u:object_r:sysfs_anti_flicker:s0
 /sys/devices/platform/soc/soc:qcom,dsi-display/hbm                   u:object_r:sysfs_hbm:s0
+/sys/devices/platform/soc/soc:qcom,dsi-display/doze_mode             u:object_r:sysfs_doze:s0
 
 # Fingerprint
 /dev/goodix_fp                                                       u:object_r:fingerprint_device:s0
