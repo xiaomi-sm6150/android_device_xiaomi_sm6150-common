@@ -58,7 +58,8 @@ public final class DozeUtils {
 
     protected static final String DOZE_BRIGHTNESS_LBM = "0";
     protected static final String DOZE_BRIGHTNESS_HBM = "1";
-    protected static final String DOZE_BRIGHTNESS_AUTO = "2";
+    protected static final String DOZE_BRIGHTNESS_DARK = "2";
+    protected static final String DOZE_BRIGHTNESS_AUTO = "3";
 
     public static void onBootCompleted(Context context) {
         checkDozeService(context);
