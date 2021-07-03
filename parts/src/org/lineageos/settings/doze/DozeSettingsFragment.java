@@ -117,6 +117,7 @@ public class DozeSettingsFragment extends PreferenceFragment
             mWakeOnGesturePreference.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
             pickupSensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
             proximitySensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
+            DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
         }
     }
 
@@ -166,23 +167,12 @@ public class DozeSettingsFragment extends PreferenceFragment
             if (!DozeUtils.DOZE_BRIGHTNESS_AUTO.equals((String) newValue)) {
                 DozeUtils.setDozeMode((String) newValue);
             }
-            switch ((String) newValue) {
-                case DozeUtils.DOZE_BRIGHTNESS_LBM:
-                    mDozeBrightnessPreference.setIcon(R.drawable.ic_doze_brightness_low);
-                    break;
-                case DozeUtils.DOZE_BRIGHTNESS_HBM:
-                    mDozeBrightnessPreference.setIcon(R.drawable.ic_doze_brightness_high);
-                    break;
-                case DozeUtils.DOZE_BRIGHTNESS_DARK:
-                    mDozeBrightnessPreference.setIcon(R.drawable.ic_doze_brightness_dark);
-                    break;
-                case DozeUtils.DOZE_BRIGHTNESS_AUTO:
-                    mDozeBrightnessPreference.setIcon(R.drawable.ic_doze_brightness_auto);
-                    break;
-            }
         }
 
-        mHandler.post(() -> DozeUtils.checkDozeService(getActivity()));
+        mHandler.post(() -> {
+                DozeUtils.checkDozeService(getActivity());
+                DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
+        });
 
         return true;
     }
@@ -199,6 +189,7 @@ public class DozeSettingsFragment extends PreferenceFragment
             DozeUtils.enableAlwaysOn(getActivity(), false);
             mAlwaysOnDisplayPreference.setChecked(false);
             mDozeBrightnessPreference.setValue(DozeUtils.DOZE_BRIGHTNESS_LBM);
+            DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
             mPickUpPreference.setChecked(false);
             mHandwavePreference.setChecked(false);
             mPocketPreference.setChecked(false);
