@@ -18,11 +18,13 @@
     <string-array name="doze_brightness_level">
         <item>Low brightness</item>
         <item>High brightness</item>
+        <item>Zero brightness </item>
         <item>Adaptive brightness</item>
     </string-array>
     <string-array name="doze_brightness_level_mode">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 </resources>

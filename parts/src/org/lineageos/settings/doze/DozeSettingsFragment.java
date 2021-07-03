@@ -173,6 +173,9 @@ public class DozeSettingsFragment extends PreferenceFragment
                 case DozeUtils.DOZE_BRIGHTNESS_HBM:
                     mDozeBrightnessPreference.setIcon(R.drawable.ic_doze_brightness_high);
                     break;
+                case DozeUtils.DOZE_BRIGHTNESS_DARK:
+                    mDozeBrightnessPreference.setIcon(R.drawable.ic_doze_brightness_dark);
+                    break;
                 case DozeUtils.DOZE_BRIGHTNESS_AUTO:
                     mDozeBrightnessPreference.setIcon(R.drawable.ic_doze_brightness_auto);
                     break;
