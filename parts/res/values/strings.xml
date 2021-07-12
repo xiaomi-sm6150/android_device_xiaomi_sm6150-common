@@ -15,6 +15,6 @@
      limitations under the License.
 -->
 <resources>
-    <string name="doze_brightness_title">Doze brightness</string>
+    <string name="doze_brightness_title">Always on brightness</string>
     <string name="doze_brightness_summary">%s mode is enabled</string>
 </resources>
