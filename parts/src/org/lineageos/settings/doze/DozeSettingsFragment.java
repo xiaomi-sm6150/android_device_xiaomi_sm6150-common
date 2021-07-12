@@ -162,6 +162,7 @@ public class DozeSettingsFragment extends PreferenceFragment
             DozeUtils.enableAlwaysOn(getActivity(), (Boolean) newValue);
             if (!(Boolean) newValue) {
                 mDozeBrightnessPreference.setValue(DozeUtils.DOZE_BRIGHTNESS_LBM);
+                DozeUtils.setDozeMode(DozeUtils.DOZE_BRIGHTNESS_LBM);
             } else {
                 mPickUpPreference.setChecked(false);
                 mHandwavePreference.setChecked(false);
