@@ -111,6 +111,10 @@ on boot
     chown system system /dev/lirc0
     chmod 0660 /dev/lirc0
 
+    # Set xiaomi touch permissions
+    chown system system /dev/xiaomi-touch
+    chmod 0660 /dev/xiaomi-touch
+
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
     user system
