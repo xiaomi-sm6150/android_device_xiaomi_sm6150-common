@@ -187,10 +187,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     telephony \
     wlan
 
-# RIL
-PRODUCT_PACKAGES += \
-    CarrierConfigOverlay
-
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_xiaomi
