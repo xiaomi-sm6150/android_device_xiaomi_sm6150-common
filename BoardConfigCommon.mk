@@ -53,9 +53,6 @@ DONT_DEXPREOPT_PREBUILTS := true
 USE_DEX2OAT_DEBUG := false
 WITH_DEXPREOPT_DEBUG_INFO := false
 
-# Gestures
-TARGET_TAP_TO_WAKE_EVENT_NODE  := "/dev/input/event3"
-
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/hidl/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/hidl/compatibility_matrix.xml
@@ -98,6 +95,9 @@ BOARD_BOOTIMG_HEADER_VERSION := 1
 endif
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+
+# Power
+TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
 
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
