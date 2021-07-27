@@ -106,6 +106,13 @@ case "$soc_id" in
     echo 100 > /proc/sys/kernel/sched_group_upmigrate
     echo 0 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
+    # Setup default schedtune values for foreground/top-app
+    echo 0 > /dev/stune/schedtune.boost
+    echo 0 > /dev/stune/schedtune.prefer_idle
+    echo 1 > /dev/stune/foreground/schedtune.prefer_idle
+    echo 1 > /dev/stune/top-app/schedtune.prefer_idle
+    echo 1 > /dev/stune/top-app/schedtune.boost
+
     # colocation v3 settings
     echo 740000 > /proc/sys/kernel/sched_little_cluster_coloc_fmin_khz
 
@@ -224,6 +231,13 @@ case "$soc_id" in
     echo 85 > /proc/sys/kernel/sched_group_downmigrate
     echo 100 > /proc/sys/kernel/sched_group_upmigrate
     echo 0 > /proc/sys/kernel/sched_walt_rotate_big_tasks
+
+    # Setup default schedtune values for foreground/top-app
+    echo 0 > /dev/stune/schedtune.boost
+    echo 0 > /dev/stune/schedtune.prefer_idle
+    echo 1 > /dev/stune/foreground/schedtune.prefer_idle
+    echo 1 > /dev/stune/top-app/schedtune.prefer_idle
+    echo 1 > /dev/stune/top-app/schedtune.boost
 
     # colocation v3 settings
     echo 740000 > /proc/sys/kernel/sched_little_cluster_coloc_fmin_khz
