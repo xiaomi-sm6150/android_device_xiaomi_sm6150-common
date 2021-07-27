@@ -138,7 +138,7 @@ case "$soc_id" in
     echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
     echo "0:1209600" > /sys/module/cpu_boost/parameters/input_boost_freq
-    echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+    echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
 
     # Set Memory parameters
     configure_memory_parameters
@@ -264,7 +264,7 @@ case "$soc_id" in
     echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
     echo "0:1248000" > /sys/module/cpu_boost/parameters/input_boost_freq
-    echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+    echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
 
     # Set Memory parameters
     configure_memory_parameters
