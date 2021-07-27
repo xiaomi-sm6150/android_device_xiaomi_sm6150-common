@@ -129,7 +129,7 @@ case "$soc_id" in
     echo 500 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us
     echo 20000 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us
     echo 1209600 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_freq
-    echo 768000 > /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq
+    echo 652800 > /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq
     echo 1 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/pl
 
     # sched_load_boost as -6 is equivalent to target load as 85. It is per cpu tunable.
