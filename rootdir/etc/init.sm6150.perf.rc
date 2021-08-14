@@ -79,7 +79,6 @@ on property:vendor.post_boot.parsed=1
     write /proc/sys/kernel/sched_upmigrate 95
     write /proc/sys/kernel/sched_child_runs_first 1
     write /proc/sys/kernel/sched_tunable_scaling 1
-    write /proc/sys/kernel/sched_conservative_pl 1
 
     # Setup default schedtune values for foreground/top-app
     write /dev/stune/schedtune.boost 0
