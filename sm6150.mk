@@ -171,6 +171,7 @@ MSMSTEPPE := sm6150
 TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 
 # Power
+TARGET_USE_QTI_POWERHAL := true
 PRODUCT_PACKAGES += \
     android.hardware.power-service
 
