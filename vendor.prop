@@ -158,7 +158,6 @@ persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 
 # Media
-debug.stagefright.ccodec=1
 debug.stagefright.omx_default_rank=0
 
 # QC framework value-adds
