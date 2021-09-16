@@ -25,7 +25,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "davinci phoenix surya toco violet"
+write_headers "courbet davinci phoenix surya toco violet"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
