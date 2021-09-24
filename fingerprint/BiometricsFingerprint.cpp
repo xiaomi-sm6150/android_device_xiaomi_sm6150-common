@@ -18,6 +18,8 @@
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.3-service.xiaomi_sm6150"
 
 #include <log/log.h>
+#include <poll.h>
+#include <thread>
 
 #include "BiometricsFingerprint.h"
 
@@ -32,6 +34,31 @@
 #define Touch_Fod_Enable 10
 #define TOUCH_MAGIC 0x5400
 #define TOUCH_IOC_SETMODE TOUCH_MAGIC + 0
+
+#define FOD_UI_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui"
+
+#ifdef ENABLE_UDFPS
+namespace {
+static bool readBool(int fd) {
+    char c;
+    int rc;
+
+    rc = lseek(fd, 0, SEEK_SET);
+    if (rc) {
+        ALOGE("failed to seek fd, err: %d", rc);
+        return false;
+    }
+
+    rc = read(fd, &c, sizeof(char));
+    if (rc != 1) {
+        ALOGE("failed to read bool from fd, err: %d", rc);
+        return false;
+    }
+
+    return c != '0';
+}
+}  // anonymous namespace
+#endif
 
 namespace android {
 namespace hardware {
@@ -54,6 +81,30 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
 
 #ifdef ENABLE_UDFPS
     touch_fd_ = android::base::unique_fd(open(TOUCH_DEV_PATH, O_RDWR));
+
+    std::thread([this]() {
+        int fd = open(FOD_UI_PATH, O_RDONLY);
+        if (fd < 0) {
+            ALOGE("failed to open fd, err: %d", fd);
+            return;
+        }
+
+        struct pollfd fodUiPoll = {
+                .fd = fd,
+                .events = POLLERR | POLLPRI,
+                .revents = 0,
+        };
+
+        while (true) {
+            int rc = poll(&fodUiPoll, 1, -1);
+            if (rc < 0) {
+                ALOGE("failed to poll fd, err: %d", rc);
+                continue;
+            }
+
+            mDevice->extCmd(mDevice, COMMAND_NIT, readBool(fd) ? PARAM_NIT_FOD : PARAM_NIT_NONE);
+        }
+    }).detach();
 #endif
 }
 
@@ -425,8 +476,6 @@ Return<void> BiometricsFingerprint::onFingerDown(uint32_t /* x */, uint32_t /* y
 #ifdef ENABLE_UDFPS
     int arg[2] = {Touch_Fod_Enable, FOD_STATUS_ON};
     ioctl(touch_fd_.get(), TOUCH_IOC_SETMODE, &arg);
-
-    mDevice->extCmd(mDevice, COMMAND_NIT, PARAM_NIT_FOD);
 #endif
 
     return Void();
@@ -444,8 +493,6 @@ Return<void> BiometricsFingerprint::onFingerUp() {
 #ifdef ENABLE_UDFPS
     int arg[2] = {Touch_Fod_Enable, FOD_STATUS_OFF};
     ioctl(touch_fd_.get(), TOUCH_IOC_SETMODE, &arg);
-
-    mDevice->extCmd(mDevice, COMMAND_NIT, PARAM_NIT_NONE);
 #endif
 
     return Void();
