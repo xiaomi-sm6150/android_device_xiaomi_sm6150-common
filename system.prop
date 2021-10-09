@@ -43,6 +43,7 @@ persist.rcs.supported=1
 persist.radio.NO_STAPA=1
 persist.radio.VT_CAM_INTERFACE=1
 persist.radio.VT_HYBRID_ENABLE=1
+persist.sys.fflag.override.settings_provider_model=false
 ril.subscription.types=RUIM
 ro.telephony.default_cdma_sub=0
 ro.telephony.default_network=22,22
