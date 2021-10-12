@@ -1,7 +1,6 @@
-cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.3-service.xiaomi_sm6150",
+cc_defaults {
+    name: "xiaomi_sm6150-fingerprint_defaults",
     defaults: ["hidl_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.xiaomi_sm6150.rc"],
     vintf_fragments: ["android.hardware.biometrics.fingerprint@2.3-service.xiaomi_sm6150.xml"],
     vendor: true,
     relative_install_path: "hw",
@@ -11,6 +10,7 @@ cc_binary {
     ],
 
     shared_libs: [
+        "libbase",
         "libcutils",
         "liblog",
         "libhidlbase",
@@ -21,4 +21,17 @@ cc_binary {
         "android.hardware.biometrics.fingerprint@2.3",
     ],
 
+}
+
+cc_binary {
+    name: "android.hardware.biometrics.fingerprint@2.3-service.xiaomi_sm6150",
+    defaults: ["xiaomi_sm6150-fingerprint_defaults"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.xiaomi_sm6150.rc"],
+}
+
+cc_binary {
+    name: "android.hardware.biometrics.fingerprint@2.3-service.xiaomi_sm6150-udfps",
+    defaults: ["xiaomi_sm6150-fingerprint_defaults"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.xiaomi_sm6150-udfps.rc"],
+    cflags: ["-DENABLE_UDFPS"],
 }
