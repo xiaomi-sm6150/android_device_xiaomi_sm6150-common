@@ -43,7 +43,6 @@ status_t BiometricsFingerprint::registerAsSystemService() {
         ALOGI("Successfully registered IBiometricsFingerprint");
     }
 
-#ifdef XIAOMI_FINGERPRINTEXTENSION
     ret = IXiaomiFingerprint::registerAsService();
     if (ret != 0) {
         ALOGE("Failed to register IXiaomiFingerprint (%d)", ret);
@@ -51,7 +50,6 @@ status_t BiometricsFingerprint::registerAsSystemService() {
     } else {
         ALOGI("Successfully registered IXiaomiFingerprint");
     }
-#endif /* XIAOMI_FINGERPRINTEXTENSION */
 
 fail:
     return ret;
