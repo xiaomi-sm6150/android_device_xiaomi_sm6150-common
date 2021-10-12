@@ -1,6 +1,8 @@
-cc_defaults {
-    name: "xiaomi_sm6150_fingerprint_defaults",
+cc_binary {
+    name: "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150",
     defaults: ["hidl_defaults"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150.xml"],
     vendor: true,
     relative_install_path: "hw",
     srcs: [
@@ -15,24 +17,7 @@ cc_defaults {
         "libhardware",
         "libutils",
         "android.hardware.biometrics.fingerprint@2.1",
+        "vendor.xiaomi.hardware.fingerprintextension@1.0",
     ],
-}
 
-cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150",
-    defaults: ["xiaomi_sm6150_fingerprint_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150.rc"],
-    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150.xml"],
-}
-
-cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150-ext",
-    defaults: ["xiaomi_sm6150_fingerprint_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150-ext.rc"],
-    vintf_fragments: [
-        "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150.xml",
-        "vendor.xiaomi.hardware.fingerprintextension@1.0.xml",
-    ],
-    shared_libs: ["vendor.xiaomi.hardware.fingerprintextension@1.0"],
-    cflags: ["-DXIAOMI_FINGERPRINTEXTENSION"],
 }

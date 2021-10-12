@@ -24,13 +24,9 @@
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <android/hardware/biometrics/fingerprint/2.1/IBiometricsFingerprint.h>
-
-#ifdef XIAOMI_FINGERPRINTEXTENSION
 #include <vendor/xiaomi/hardware/fingerprintextension/1.0/IXiaomiFingerprint.h>
+
 #include "fingerprint.h"
-#else
-#include <hardware/fingerprint.h>
-#endif
 
 namespace android {
 namespace hardware {
@@ -48,12 +44,9 @@ using ::android::hardware::hidl_vec;
 using ::android::hardware::hidl_string;
 using ::android::sp;
 
-#ifdef XIAOMI_FINGERPRINTEXTENSION
 using ::vendor::xiaomi::hardware::fingerprintextension::V1_0::IXiaomiFingerprint;
+
 struct BiometricsFingerprint : public IBiometricsFingerprint, public IXiaomiFingerprint {
-#else
-struct BiometricsFingerprint : public IBiometricsFingerprint {
-#endif
 public:
     BiometricsFingerprint();
     ~BiometricsFingerprint();
@@ -74,9 +67,7 @@ public:
     Return<RequestStatus> remove(uint32_t gid, uint32_t fid) override;
     Return<RequestStatus> setActiveGroup(uint32_t gid, const hidl_string& storePath) override;
     Return<RequestStatus> authenticate(uint64_t operationId, uint32_t gid) override;
-#ifdef XIAOMI_FINGERPRINTEXTENSION
     Return<int32_t> extCmd(int32_t cmd, int32_t param) override;
-#endif /*XIAOMI_FINGERPRINTEXTENSION */
 
 private:
     static fingerprint_device_t* openHal();
