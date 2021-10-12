@@ -17,7 +17,6 @@ cc_binary {
         "libhardware",
         "libutils",
         "android.hardware.biometrics.fingerprint@2.1",
-        "vendor.xiaomi.hardware.fingerprintextension@1.0",
     ],
 
 }
