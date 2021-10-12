@@ -176,8 +176,8 @@ public class DozeSettingsFragment extends PreferenceFragment
         }
 
         mHandler.post(() -> {
-                DozeUtils.checkDozeService(getActivity());
-                DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
+            DozeUtils.checkDozeService(getActivity());
+            DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
         });
 
         return true;
