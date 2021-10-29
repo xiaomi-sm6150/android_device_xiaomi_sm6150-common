@@ -32,4 +32,8 @@ cc_binary {
         "liblog",
         "libutils",
     ],
+    overrides: [
+        "lights.qcom",
+        "android.hardware.lights-service.qti",
+    ],
 }
