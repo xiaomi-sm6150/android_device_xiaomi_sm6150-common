@@ -102,7 +102,13 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
                 continue;
             }
 
-            mDevice->extCmd(mDevice, COMMAND_NIT, readBool(fd) ? PARAM_NIT_FOD : PARAM_NIT_NONE);
+            bool fingerDown = readBool(fd);
+            ALOGI("fod_ui status: %d", fingerDown);
+            mDevice->extCmd(mDevice, COMMAND_NIT, fingerDown ? PARAM_NIT_FOD : PARAM_NIT_NONE);
+            if (!fingerDown) {
+                int arg[2] = {Touch_Fod_Enable, FOD_STATUS_OFF};
+                ioctl(touch_fd_.get(), TOUCH_IOC_SETMODE, &arg);
+            }
         }
     }).detach();
 #endif
@@ -490,10 +496,6 @@ Return<void> BiometricsFingerprint::onFingerDown(uint32_t /* x */, uint32_t /* y
  * previously caused a "finger down" event will be reported.
  */
 Return<void> BiometricsFingerprint::onFingerUp() {
-#ifdef ENABLE_UDFPS
-    int arg[2] = {Touch_Fod_Enable, FOD_STATUS_OFF};
-    ioctl(touch_fd_.get(), TOUCH_IOC_SETMODE, &arg);
-#endif
 
     return Void();
 }
