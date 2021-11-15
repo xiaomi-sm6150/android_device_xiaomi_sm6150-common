@@ -1,0 +1,9 @@
+on boot
+    # Set xiaomi touch permissions
+    chown system system /dev/xiaomi-touch
+    chmod 0660 /dev/xiaomi-touch
+
+service vendor.touchfeature-hal-1-0 /vendor/bin/hw/vendor.xiaomi.hardware.touchfeature@1.0-service-sm6150
+    class late_start
+    user system
+    group system

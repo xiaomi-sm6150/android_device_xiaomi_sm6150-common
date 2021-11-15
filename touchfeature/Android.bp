@@ -1,24 +1,22 @@
-// FIXME: your file license if you have one
+//
+// Copyright (C) 2021 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
 
-cc_library_shared {
-    // FIXME: this should only be -impl for a passthrough hal.
-    // In most cases, to convert this to a binderized implementation, you should:
-    // - change '-impl' to '-service' here and make it a cc_binary instead of a
-    //   cc_library_shared.
-    // - add a *.rc file for this module.
-    // - delete HIDL_FETCH_I* functions.
-    // - call configureRpcThreadpool and registerAsService on the instance.
-    // You may also want to append '-impl/-service' with a specific identifier like
-    // '-vendor' or '-<hardware identifier>' etc to distinguish it.
-    name: "vendor.xiaomi.hardware.touchfeature@1.0-impl",
+cc_binary {
+    name: "vendor.xiaomi.hardware.touchfeature@1.0-service-sm6150",
+    defaults: ["hidl_defaults"],
+    init_rc: ["vendor.xiaomi.hardware.touchfeature@1.0-service-sm6150.rc"],
+    vintf_fragments: ["vendor.xiaomi.hardware.touchfeature@1.0-service-sm6150.xml"],
     relative_install_path: "hw",
-    // FIXME: this should be 'vendor: true' for modules that will eventually be
-    // on AOSP.
-    proprietary: true,
+    vendor: true,
     srcs: [
+        "service.cpp",
         "TouchFeature.cpp",
     ],
     shared_libs: [
+        "libbase",
         "libhidlbase",
         "libutils",
         "vendor.xiaomi.hardware.touchfeature@1.0",
