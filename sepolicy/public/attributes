@@ -1,0 +1,3 @@
+attribute hal_touchfeature;
+attribute hal_touchfeature_client;
+attribute hal_touchfeature_server;
