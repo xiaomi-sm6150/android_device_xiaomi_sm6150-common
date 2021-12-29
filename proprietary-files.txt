@@ -1,3 +1,5 @@
+# These proprietary files are extracted from Redmi Note 10 Pro (codenamed `sweet`) MIUI V12.5.8.0.RKFMIXM, unless pinned
+
 # ADSP
 vendor/bin/adsprpcd
 vendor/bin/cdsprpcd
