@@ -51,7 +51,7 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 -vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # Alarm - from Redmi Note 10 Pro V12.5.1.0.RKFMIXM
--product/app/PowerOffAlarm/PowerOffAlarm.apk|5885c09b8446d8b0c1f665bd9522792d79201cd7
+product/app/PowerOffAlarm/PowerOffAlarm.apk|5885c09b8446d8b0c1f665bd9522792d79201cd7
 
 # ANT+
 -vendor/lib64/hw/com.dsi.ant@1.0-impl.so
@@ -83,14 +83,14 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 -vendor/bin/hvdcp_opti
 
 # Certificate Authority
--vendor/app/CACertService/CACertService.apk
+vendor/app/CACertService/CACertService.apk
 -vendor/lib64/libcacertclient.so
 -vendor/lib64/libjnihelper.so
 -vendor/lib64/vendor.qti.hardware.cacert@1.0.so
 
 # CNE
--vendor/app/CneApp/CneApp.apk
--vendor/app/IWlanService/IWlanService.apk
+vendor/app/CneApp/CneApp.apk
+vendor/app/IWlanService/IWlanService.apk
 -vendor/bin/cnd
 vendor/etc/init/cnd.rc
 -vendor/lib64/libcne.so
@@ -175,7 +175,7 @@ system_ext/framework/dpmapi.jar
 -system_ext/lib64/libdpmfdmgr.so
 -system_ext/lib64/libdpmframework.so
 -system_ext/lib64/libdpmtcm.so
--system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
+system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 -vendor/bin/dpmQmiMgr
 vendor/etc/init/dpmQmiMgr.rc
 -vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE=com.qualcomm.qti.dpm.api@1.0_vendor
@@ -299,7 +299,7 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 -system_ext/lib64/libimsmedia_jni.so
 -system_ext/lib64/vendor.qti.diaghal@1.0.so
 -system_ext/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE=vendor.qti.imsrtpservice@3.0_system_ext
--system_ext/priv-app/ims/ims.apk
+system_ext/priv-app/ims/ims.apk
 -vendor/bin/ims_rtp_daemon
 -vendor/bin/imsdatadaemon
 -vendor/bin/imsqmidaemon
@@ -443,12 +443,12 @@ system_ext/etc/permissions/qti_permissions.xml
 -vendor/lib64/libqsocket.so
 
 # RIL
--system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/telephonyservice.xml
 system_ext/framework/qcrilhook.jar
 system_ext/framework/qti-telephony-common.jar
--system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -vendor/bin/hw/qcrild
 -vendor/bin/adpl
 -vendor/bin/netmgrd
@@ -516,14 +516,14 @@ vendor/radio/qcril_database/qcril.db
 -vendor/lib64/libril-qc-hal-qmi.so|fb0647e357e100299c3bef7af2e488a1c6fbfbbc
 
 # Soter
--app/SoterService/SoterService.apk
+app/SoterService/SoterService.apk
 -vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 -vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 -vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
 # Time
--vendor/app/TimeService/TimeService.apk
+vendor/app/TimeService/TimeService.apk
 -vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 -vendor/lib64/libtime_genoff.so
