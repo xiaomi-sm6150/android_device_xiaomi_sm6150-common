@@ -37,7 +37,7 @@ allow vendor_toolbox {
     vendor_persist_sensors_file
     vendor_persist_time_file
     vendor_persist_vpp_file
-    vendor_persist_wcnss_service_file
+    
 }:dir { r_dir_perms setattr };
 
 allow vendor_toolbox {
