@@ -1,4 +1,4 @@
-# These proprietary files are extracted from Redmi Note 10 Pro (codenamed `sweet`) MIUI V12.5.8.0.RKFMIXM, unless pinned
+# These proprietary files are extracted from Redmi Note 10 Pro (codenamed `sweet`) MIUI V13.0.8.0.SKFMIXM, unless pinned
 
 # ADSP
 -vendor/bin/adsprpcd
@@ -44,14 +44,12 @@ vendor/lib/rfsa/adsp/misound_karaokemix_res.bin
 vendor/lib/rfsa/adsp/misound_res.bin
 
 # Alarm
+product/app/PowerOffAlarm/PowerOffAlarm.apk
 -vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
 -vendor/bin/power_off_alarm
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 -vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 -vendor/lib64/vendor.qti.hardware.alarm@1.0.so
-
-# Alarm - from Redmi Note 10 Pro V12.5.1.0.RKFMIXM
-product/app/PowerOffAlarm/PowerOffAlarm.apk|5885c09b8446d8b0c1f665bd9522792d79201cd7
 
 # ANT+
 -vendor/lib64/hw/com.dsi.ant@1.0-impl.so
@@ -65,13 +63,15 @@ system_ext/framework/audiosphere.jar
 # Bluetooth
 -vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
--vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
+-vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 -vendor/lib/libbluetooth_audio_session_qti.so
+-vendor/lib/libbluetooth_audio_session_qti_2_1.so
 -vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 -vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 -vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 -vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
 -vendor/lib64/libbtnv.so
+-vendor/lib64/libsoc_helper.so
 -vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 -vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
@@ -92,6 +92,8 @@ vendor/app/CACertService/CACertService.apk
 vendor/app/CneApp/CneApp.apk
 vendor/app/IWlanService/IWlanService.apk
 -vendor/bin/cnd
+vendor/etc/cne/mwqem.conf
+vendor/etc/cne/profileMwqem.xml
 vendor/etc/init/cnd.rc
 -vendor/lib64/libcne.so
 -vendor/lib64/libcneapiclient.so
@@ -101,6 +103,9 @@ vendor/etc/init/cnd.rc
 -vendor/lib64/libxml.so
 -vendor/lib64/vendor.qti.data.factory@2.0.so
 -vendor/lib64/vendor.qti.data.factory@2.1.so
+-vendor/lib64/vendor.qti.data.factory@2.2.so
+-vendor/lib64/vendor.qti.data.factory@2.3.so
+-vendor/lib64/vendor.qti.data.mwqem@1.0.so
 -vendor/lib64/vendor.qti.data.slm@1.0.so
 -vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
 -vendor/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
@@ -108,12 +113,14 @@ vendor/etc/init/cnd.rc
 -vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 -vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so
 -vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
+-vendor/lib64/vendor.qti.hardware.data.lce@1.0.so
 -vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
--vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
+-vendor/lib64/vendor.qti.hardware.mwqemadapter@1.0.so
 -vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so
 -vendor/lib64/vendor.qti.latency@2.0.so
+-vendor/lib64/vendor.qti.latency@2.1.so
 
-# CNE configs
+# CNE profiles
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml
@@ -266,6 +273,7 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 -vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
 -vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so
 -vendor/lib64/libcdfw.so
+-vendor/lib64/libcdfw_remote_api.so
 -vendor/lib64/libdataitems.so
 -vendor/lib64/libgdtap.so
 -vendor/lib64/libizat_client_api.so
@@ -315,6 +323,7 @@ vendor/etc/seccomp_policy/imsrtp.policy
 -vendor/lib64/com.qualcomm.qti.uceservice@2.0.so
 -vendor/lib64/com.qualcomm.qti.uceservice@2.1.so
 -vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
+-vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
 -vendor/lib64/lib-imscmservice.so
 -vendor/lib64/lib-imsdpl.so
 -vendor/lib64/lib-imsqimf.so
@@ -336,11 +345,15 @@ vendor/etc/seccomp_policy/imsrtp.policy
 -vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so
 -vendor/lib64/vendor.qti.hardware.radio.ims@1.5.so
 -vendor/lib64/vendor.qti.hardware.radio.ims@1.6.so
+-vendor/lib64/vendor.qti.hardware.radio.ims@1.7.so
 -vendor/lib64/vendor.qti.ims.callcapability@1.0.so
 -vendor/lib64/vendor.qti.ims.callinfo@1.0.so
 -vendor/lib64/vendor.qti.ims.factory@1.0.so
+-vendor/lib64/vendor.qti.ims.factory@1.1.so
 -vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
+-vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so
 -vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
+-vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 -vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 -vendor/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE=vendor.qti.imsrtpservice@3.0_vendor
 
@@ -351,8 +364,8 @@ vendor/etc/init/ipa_fws.rc
 -vendor/bin/msm_irqbalance
 
 # Keymaster
--vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
-vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
+-vendor/bin/hw/android.hardware.keymaster@4.1-service-qti
+vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc
 -vendor/lib64/libkeymasterdeviceutils.so
 -vendor/lib64/libkeymasterutils.so
 -vendor/lib64/libqcbor.so
@@ -444,7 +457,6 @@ system_ext/etc/permissions/qti_permissions.xml
 # RIL
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/etc/permissions/qcrilhook.xml
-system_ext/etc/permissions/telephonyservice.xml
 system_ext/framework/qcrilhook.jar
 system_ext/framework/qti-telephony-common.jar
 system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
@@ -486,6 +498,7 @@ vendor/etc/init/vendor.qti.tftp.rc
 -vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
 -vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so
 -vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so
+-vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so
 -vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so
 -vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so
 -vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so
@@ -493,6 +506,8 @@ vendor/etc/init/vendor.qti.tftp.rc
 -vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so
 -vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so
 -vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so
+-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.5.so
+-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.6.so
 -vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
 -vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
 -vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so
@@ -501,6 +516,7 @@ vendor/etc/init/vendor.qti.tftp.rc
 -vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 -vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/radio/qcril_database/upgrade/0_initial.sql
+vendor/radio/qcril_database/upgrade/10_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/1_version_intro.sql
 vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
@@ -508,6 +524,8 @@ vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/8_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/9_version_update_ecc_table.sql
 vendor/radio/qcril_database/qcril.db
 
 # RIL - from surya V12.5.2.0 RJGEUXM
@@ -515,7 +533,7 @@ vendor/radio/qcril_database/qcril.db
 -vendor/lib64/libril-qc-hal-qmi.so|fb0647e357e100299c3bef7af2e488a1c6fbfbbc
 
 # Soter
-app/SoterService/SoterService.apk
+vendor/app/SoterService/SoterService.apk
 -vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 -vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
