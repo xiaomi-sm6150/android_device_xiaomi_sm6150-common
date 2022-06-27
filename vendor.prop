@@ -164,6 +164,9 @@ persist.dbg.wfc_avail_ovr=1
 debug.stagefright.ccodec=1
 debug.stagefright.omx_default_rank=0
 
+# Netflix
+vendor.netflix.bsp_rev=Q6150-17263-1
+
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
 
