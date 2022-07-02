@@ -26,7 +26,7 @@
 #define TOUCH_MAGIC 0x5400
 #define TOUCH_IOC_SETMODE TOUCH_MAGIC + 0
 #define UDFPS_STATUS_ON 1
-#define UDFPS_STATUS_OFF -1
+#define UDFPS_STATUS_OFF 0
 
 #define FOD_UI_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui"
 
