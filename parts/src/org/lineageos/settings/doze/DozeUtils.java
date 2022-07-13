@@ -66,8 +66,7 @@ public final class DozeUtils {
 
     protected static final String DOZE_BRIGHTNESS_LBM = "0";
     protected static final String DOZE_BRIGHTNESS_HBM = "1";
-    protected static final String DOZE_BRIGHTNESS_DARK = "2";
-    protected static final String DOZE_BRIGHTNESS_AUTO = "3";
+    protected static final String DOZE_BRIGHTNESS_AUTO = "2";
 
     public static void onBootCompleted(Context context) {
         checkDozeService(context);
@@ -209,9 +208,6 @@ public final class DozeUtils {
                 break;
             case DozeUtils.DOZE_BRIGHTNESS_HBM:
                 preference.setIcon(R.drawable.ic_doze_brightness_high);
-                break;
-            case DozeUtils.DOZE_BRIGHTNESS_DARK:
-                preference.setIcon(R.drawable.ic_doze_brightness_dark);
                 break;
             case DozeUtils.DOZE_BRIGHTNESS_AUTO:
                 preference.setIcon(R.drawable.ic_doze_brightness_auto);
