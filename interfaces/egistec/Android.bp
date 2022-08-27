@@ -1,0 +1,4 @@
+hidl_package_root {
+    name: "vendor.egistec",
+    path: "device/xiaomi/sm6150-common/interfaces/egistec",
+}
