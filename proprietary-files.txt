@@ -186,8 +186,8 @@ vendor/etc/init/dpmQmiMgr.rc
 
 # DRM
 -vendor/bin/qseecomd
-vendor/etc/init/qseecomd.rc
 vendor/etc/gpfspath_oem_config.xml
+vendor/etc/init/qseecomd.rc
 -vendor/lib64/libGPreqcancel.so
 -vendor/lib64/libGPreqcancel_svc.so
 -vendor/lib64/libQSEEComAPI.so
@@ -208,8 +208,8 @@ vendor/etc/gpfspath_oem_config.xml
 -vendor/bin/hw/android.hardware.drm@1.3-service.widevine
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
--vendor/lib64/mediadrm/libwvdrmengine.so
 -vendor/lib64/libwvhidl.so
+-vendor/lib64/mediadrm/libwvdrmengine.so
 
 # DSP
 -vendor/bin/dspservice
@@ -456,8 +456,8 @@ system_ext/etc/permissions/qcrilhook.xml
 system_ext/framework/qcrilhook.jar
 system_ext/framework/qti-telephony-common.jar
 system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
--vendor/bin/hw/qcrild
 -vendor/bin/adpl
+-vendor/bin/hw/qcrild
 -vendor/bin/netmgrd
 -vendor/bin/qti
 -vendor/bin/rmt_storage
@@ -511,6 +511,7 @@ vendor/etc/init/vendor.qti.tftp.rc
 -vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 -vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 -vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
+vendor/radio/qcril_database/qcril.db
 vendor/radio/qcril_database/upgrade/0_initial.sql
 vendor/radio/qcril_database/upgrade/10_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/1_version_intro.sql
@@ -522,7 +523,6 @@ vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/8_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/9_version_update_ecc_table.sql
-vendor/radio/qcril_database/qcril.db
 
 # RIL - from surya V12.5.2.0 RJGEUXM
 -vendor/lib64/libqdp.so|027a548996afea17c84904632fec570ccceca442
