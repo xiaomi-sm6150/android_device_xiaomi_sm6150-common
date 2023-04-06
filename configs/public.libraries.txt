@@ -1,3 +1,4 @@
+libqti-perfd-client.so
 libadsprpc.so
 libalAILDC.so
 libalCFR.so
