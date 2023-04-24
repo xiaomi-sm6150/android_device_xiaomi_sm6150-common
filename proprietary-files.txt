@@ -1,4 +1,4 @@
-# These proprietary files are extracted from Redmi Note 10 Pro (codenamed `sweet`) MIUI V14.0.1.0.TKFMIXM, unless pinned
+# These proprietary files are extracted from Redmi Note 10 Pro (codenamed `sweet`) MIUI V14.0.2.0.TKFMIXM, unless pinned
 
 # ADSP
 -vendor/bin/adsprpcd
@@ -302,6 +302,7 @@ vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
 -system_ext/lib64/libimsmedia_jni.so
 -system_ext/lib64/vendor.qti.diaghal@1.0.so
 -system_ext/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE=vendor.qti.imsrtpservice@3.0_system_ext
+-system_ext/lib64/vendor.qti.imsrtpservice@3.1.so;MODULE=vendor.qti.imsrtpservice@3.1_system_ext
 system_ext/priv-app/ims/ims.apk|6a383ab360468c2b040c4ce618ac5188ab4fc655
 -vendor/bin/ims_rtp_daemon
 -vendor/bin/imsdatadaemon
