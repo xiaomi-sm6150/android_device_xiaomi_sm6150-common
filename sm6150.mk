@@ -267,7 +267,7 @@ PRODUCT_ENFORCE_RRO_TARGETS += *
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.xiaomi-libperfmgr
+    android.hardware.power-service-qti
 
 # QTI
 PRODUCT_PACKAGES += \
@@ -309,8 +309,6 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
     hardware/xiaomi
 
 # Telephony
