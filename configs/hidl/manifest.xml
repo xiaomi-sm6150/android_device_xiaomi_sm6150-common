@@ -54,6 +54,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+
     <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
         <transport>hwbinder</transport>
@@ -271,6 +272,15 @@
         <version>1.0</version>
         <interface>
             <name>IFmHci</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.iop</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IIop</name>
             <instance>default</instance>
         </interface>
     </hal>

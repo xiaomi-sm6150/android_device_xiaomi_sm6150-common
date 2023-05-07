@@ -269,10 +269,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
 
-# Perf
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.perf@2.2.vendor
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service
@@ -284,6 +280,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/configs/permissions/system_ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml
+
+# QTI components
+TARGET_COMMON_QTI_COMPONENTS := \
+    perf
 
 # RIL
 PRODUCT_PACKAGES += \
