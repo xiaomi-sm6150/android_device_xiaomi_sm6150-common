@@ -223,10 +223,6 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.1-service.xiaomi_sm6150
-
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail.vendor \
