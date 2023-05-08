@@ -41,9 +41,6 @@ BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 TARGET_BOOTLOADER_BOARD_NAME := sm6150
 TARGET_NO_BOOTLOADER := true
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
-
 # GPS
 LOC_HIDL_VERSION := 4.0
 
@@ -88,7 +85,6 @@ endif
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 # Media
-TARGET_USES_ION := true
 TARGET_DISABLED_UBWC := true
 
 # Platform
@@ -98,12 +94,8 @@ TARGET_BOARD_PLATFORM := sm6150
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
 # Properties
-TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
-
-# QCOM
-BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
