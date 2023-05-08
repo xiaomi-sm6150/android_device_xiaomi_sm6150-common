@@ -14,9 +14,6 @@ vendor.qcom.bluetooth.soc=cherokee
 # Camera
 camera.disable_zsl_mode=1
 
-# Chipset
-ro.soc.manufacturer=QTI
-
 # Dalvik
 dalvik.vm.systemuicompilerfilter=speed
 
@@ -59,6 +56,9 @@ persist.sys.sf.color_mode=9
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Init
+vendor.post_boot.custom=true
 
 # Netflix
 vendor.netflix.bsp_rev=Q6150-17263-1

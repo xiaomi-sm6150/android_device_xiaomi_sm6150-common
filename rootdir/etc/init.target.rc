@@ -145,6 +145,9 @@ on property:sys.boot_completed=1
     write /sys/block/sde/queue/nr_requests 128
     write /sys/block/sde/queue/iostats 1
 
+    # Start custom post_boot script
+    start xiaomi_sm6150-post-boot
+
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
     user system
@@ -212,4 +215,11 @@ service vendor.nv_mac /vendor/bin/nv_mac
     class main
     user system
     group system inet net_admin wifi net_raw
+    oneshot
+
+service xiaomi_sm6150-post-boot /vendor/bin/sh /vendor/bin/init.xiaomi_sm6150.post_boot.sh
+    class core
+    user root
+    group root system wakelock graphics
+    disabled
     oneshot
