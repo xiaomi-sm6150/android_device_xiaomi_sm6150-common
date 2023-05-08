@@ -230,6 +230,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     perf \
     telephony \
     usb \
+    vibrator \
     wfd
 
 # Recovery
@@ -257,13 +258,6 @@ PRODUCT_SOONG_NAMESPACES += \
 # Uevent
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
-
-# Vibrator
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
 # Vulkan
 PRODUCT_PACKAGES += \
