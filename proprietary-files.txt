@@ -150,20 +150,6 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
 -vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 
-# Display
--vendor/lib64/libdisplayqos.so
--vendor/lib64/libhdr_tm.so
--vendor/lib64/libqseed3.so
--vendor/lib64/libsdm-color.so
--vendor/lib64/libsdm-colormgr-algo.so
--vendor/lib64/libsdm-diag.so
--vendor/lib64/libsdm-disp-vndapis.so
--vendor/lib64/libsdmextension.so
--vendor/lib64/libtinyxml2_1.so
-
-# Display - from NX627J 20201029.204053
--vendor/lib64/libsdedrm.so|582910d21139781ad9e414c35207584f51e035e2
-
 # DPM
 -vendor/bin/dpmQmiMgr
 vendor/etc/init/dpmQmiMgr.rc
