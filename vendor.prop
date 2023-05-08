@@ -140,10 +140,6 @@ persist.sys.sf.color_mode=9
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-# Media
-debug.stagefright.ccodec=1
-debug.stagefright.omx_default_rank=0
-
 # Netflix
 vendor.netflix.bsp_rev=Q6150-17263-1
 
