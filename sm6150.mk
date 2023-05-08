@@ -251,7 +251,8 @@ TARGET_COMMON_QTI_COMPONENTS := \
     bt \
     perf \
     telephony \
-    usb
+    usb \
+    wfd
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -321,13 +322,7 @@ PRODUCT_COPY_FILES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    libdisplayconfig.qti \
-    libnl \
-    libqdMetaData \
     libwfdaac_vendor
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
 
 # ZRAM writeback
 PRODUCT_PROPERTY_OVERRIDES += \
