@@ -111,6 +111,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
