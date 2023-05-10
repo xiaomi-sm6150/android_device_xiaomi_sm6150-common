@@ -61,7 +61,7 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 vendor.post_boot.custom=true
 
 # Netflix
-vendor.netflix.bsp_rev=Q6150-17263-1
+ro.netflix.bsp_rev=Q6150-17263-1
 
 # Radio
 persist.vendor.radio.data_ltd_sys_ind=1
