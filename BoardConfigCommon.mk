@@ -103,6 +103,9 @@ BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 TARGET_USES_ION := true
 TARGET_DISABLED_UBWC := true
 
+# Metadata
+BOARD_USES_METADATA_PARTITION := true
+
 # Partition
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product system_ext odm
