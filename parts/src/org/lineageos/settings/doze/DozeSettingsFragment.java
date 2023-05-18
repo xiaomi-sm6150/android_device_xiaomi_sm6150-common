@@ -79,16 +79,19 @@ public class DozeSettingsFragment extends PreferenceFragment
                 dozeEnabled && DozeUtils.isAlwaysOnEnabled(getActivity()));
         mDozeBrightnessPreference.setOnPreferenceChangeListener(this);
 
-        mWakeOnGesturePreference = (SwitchPreference) findPreference(DozeUtils.WAKE_ON_GESTURE_KEY);
-        mWakeOnGesturePreference.setEnabled(dozeEnabled);
-        mWakeOnGesturePreference.setOnPreferenceChangeListener(this);
-
+        PreferenceCategory gesturesCategory =
+                (PreferenceCategory) getPreferenceScreen().findPreference(
+                        DozeUtils.CATEG_GESTURES);
         PreferenceCategory pickupSensorCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(
                         DozeUtils.CATEG_PICKUP_SENSOR);
         PreferenceCategory proximitySensorCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(
                         DozeUtils.CATEG_PROX_SENSOR);
+
+        mWakeOnGesturePreference = (SwitchPreference) findPreference(DozeUtils.WAKE_ON_GESTURE_KEY);
+        mWakeOnGesturePreference.setEnabled(dozeEnabled);
+        mWakeOnGesturePreference.setOnPreferenceChangeListener(this);
 
         mPickUpPreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_PICK_UP_KEY);
         mPickUpPreference.setEnabled(dozeEnabled);
@@ -117,7 +120,7 @@ public class DozeSettingsFragment extends PreferenceFragment
             } else {
                 DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
             }
-            mWakeOnGesturePreference.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
+            gesturesCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
             pickupSensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
             proximitySensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
         }

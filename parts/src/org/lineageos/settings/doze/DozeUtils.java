@@ -47,6 +47,7 @@ public final class DozeUtils {
     protected static final String ALWAYS_ON_DISPLAY = "always_on_display";
     protected static final String DOZE_BRIGHTNESS_KEY = "doze_brightness";
     protected static final String WAKE_ON_GESTURE_KEY = "wake_on_gesture";
+    protected static final String CATEG_GESTURES = "gestures";
     protected static final String CATEG_PICKUP_SENSOR = "pickup_sensor";
     protected static final String CATEG_PROX_SENSOR = "proximity_sensor";
 
