@@ -1,4 +1,4 @@
-# These proprietary files are extracted from Redmi Note 10 Pro (codenamed `sweet`) MIUI V14.0.2.0.TKFMIXM, unless pinned
+# These proprietary files are extracted from Redmi Note 12 Pro 4G (codenamed `sweet`) MIUI V14.0.1.0.THGMIXM, unless pinned
 
 # ADSP
 -vendor/bin/adsprpcd
@@ -23,7 +23,6 @@ vendor/lib/rfsa/adsp/dirac_resource.dar
 -vendor/lib/rfsa/adsp/libVC1Dec.so
 -vendor/lib/rfsa/adsp/libVC1DecDsp_skel.so
 -vendor/lib/rfsa/adsp/libapps_mem_heap.so
--vendor/lib/rfsa/adsp/libarcsoft_dualcam_refocus_skel.so
 -vendor/lib/rfsa/adsp/libcamera_nn_skel.so
 -vendor/lib/rfsa/adsp/libcvpdsp_skel.so
 -vendor/lib/rfsa/adsp/libdirac-capiv2.so
@@ -41,7 +40,7 @@ vendor/lib/rfsa/adsp/dirac_resource.dar
 -vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 vendor/lib/rfsa/adsp/misound_karaoke_res.bin
 vendor/lib/rfsa/adsp/misound_karaokemix_res.bin
-vendor/lib/rfsa/adsp/misound_res.bin
+vendor/lib/rfsa/adsp/misound_res_spk.bin
 
 # Alarm
 product/app/PowerOffAlarm/PowerOffAlarm.apk
@@ -303,7 +302,7 @@ vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
 -system_ext/lib64/vendor.qti.diaghal@1.0.so
 -system_ext/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE=vendor.qti.imsrtpservice@3.0_system_ext
 -system_ext/lib64/vendor.qti.imsrtpservice@3.1.so;MODULE=vendor.qti.imsrtpservice@3.1_system_ext
-system_ext/priv-app/ims/ims.apk|6a383ab360468c2b040c4ce618ac5188ab4fc655
+system_ext/priv-app/ims/ims.apk|18f701fb53a81c65b923978876494791c782b7c4
 -vendor/bin/ims_rtp_daemon
 -vendor/bin/imsdatadaemon
 -vendor/bin/imsqmidaemon
@@ -514,19 +513,21 @@ vendor/etc/init/vendor.qti.tftp.rc
 -vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/radio/qcril_database/qcril.db
 vendor/radio/qcril_database/upgrade/0_initial.sql
-vendor/radio/qcril_database/upgrade/10_version_update_ecc_table.sql
-vendor/radio/qcril_database/upgrade/11_version_update_ecc_table.sql
-vendor/radio/qcril_database/upgrade/12_version_update_ecc_table.sql
-vendor/radio/qcril_database/upgrade/13_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/1_version_intro.sql
 vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
+vendor/radio/qcril_database/upgrade/31_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/32_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/33_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/34_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/35_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/36_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/37_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/38_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/39_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
 vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
-vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql
-vendor/radio/qcril_database/upgrade/8_version_update_ecc_table.sql
-vendor/radio/qcril_database/upgrade/9_version_update_ecc_table.sql
 
 # RIL - from Redmi Note 10 V14.0.2.0.SKGMIXM
 -vendor/lib64/libril-qc-hal-qmi.so|31380a6e821c840a385be40b6029f290030b2c13
