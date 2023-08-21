@@ -32,27 +32,29 @@ using ::vendor::lineage::livedisplay::V2_1::implementation::AntiFlicker;
 using ::vendor::lineage::livedisplay::V2_1::implementation::SunlightEnhancement;
 
 int main() {
-    android::sp<IAntiFlicker> antiFlicker = new AntiFlicker();
-    android::sp<ISunlightEnhancement> sunlightEnhancement = new SunlightEnhancement();
-
     std::shared_ptr<SDMController> controller = std::make_shared<SDMController>();
     android::sp<PictureAdjustment> pictureAdjustment = new PictureAdjustment(controller);
 
     android::hardware::configureRpcThreadpool(1, true /*callerWillJoin*/);
 
+#ifdef SUPPORT_ANTI_FLICKER
+    android::sp<IAntiFlicker> antiFlicker = new AntiFlicker();
     if (antiFlicker->registerAsService() != android::OK) {
         LOG(ERROR) << "Cannot register anti flicker HAL service.";
         return 1;
     }
+#endif
     if (pictureAdjustment->registerAsService() != android::OK) {
         LOG(ERROR) << "Cannot register picture adjustment HAL service.";
         return 1;
     }
+#ifdef SUPPORT_SUNLIGHT_ENHANCEMENT
+    android::sp<ISunlightEnhancement> sunlightEnhancement = new SunlightEnhancement();
     if (sunlightEnhancement->registerAsService() != android::OK) {
         LOG(ERROR) << "Cannot register sunlight enhancement HAL service.";
         return 1;
     }
-
+#endif
     LOG(INFO) << "LiveDisplay HAL service is ready.";
 
     android::hardware::joinRpcThreadpool();

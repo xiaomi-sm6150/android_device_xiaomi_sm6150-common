@@ -13,9 +13,44 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+soong_config_module_type {
+    name: "livedisplay_supported_interfaces",
+    module_type: "cc_defaults",
+    config_namespace: "xiaomiSm6150Vars",
+    bool_variables: [
+        "livedisplay_support_anti_flicker",
+        "livedisplay_support_sunlight_enhancement",
+    ],
+    properties: [
+        "cflags",
+        "vintf_fragments",
+    ],
+}
+
+livedisplay_supported_interfaces {
+    name: "livedisplay_supported_interfaces_defaults",
+    soong_config_variables: {
+        livedisplay_support_anti_flicker: {
+            cflags: ["-DSUPPORT_ANTI_FLICKER"],
+            vintf_fragments: [
+                "vendor.lineage.livedisplay@2.1_IAntiFlicker.xml",
+            ],
+        },
+        livedisplay_support_sunlight_enhancement: {
+            cflags: ["-DSUPPORT_SUNLIGHT_ENHANCEMENT"],
+            vintf_fragments: [
+                "vendor.lineage.livedisplay@2.1_ISunlightEnhancement.xml",
+            ],
+        },
+    },
+}
+
 cc_binary {
     name: "vendor.lineage.livedisplay@2.1-service.xiaomi_sm6150",
-    defaults: ["hidl_defaults"],
+    defaults: [
+        "hidl_defaults",
+        "livedisplay_supported_interfaces_defaults",
+    ],
     vintf_fragments: ["vendor.lineage.livedisplay@2.1-service.xiaomi_sm6150.xml"],
     init_rc: ["vendor.lineage.livedisplay@2.1-service.xiaomi_sm6150.rc"],
     relative_install_path: "hw",
