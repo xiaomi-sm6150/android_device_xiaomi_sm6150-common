@@ -96,6 +96,10 @@ on boot
     chown system system /dev/xiaomi-touch
     chmod 0660 /dev/xiaomi-touch
 
+    # Set IR permissions
+    chown system system /dev/lirc0
+    chmod 0660 /dev/lirc0
+
     # Set fingerprint related permissions
     chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq
     chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq_enable
