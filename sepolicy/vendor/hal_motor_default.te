@@ -1,6 +1,4 @@
 type hal_motor_hwservice_xiaomi, hwservice_manager_type;
-type hall_device, dev_type;
-type motor_device, dev_type;
 
 type hal_motor_default, domain;
 hal_server_domain(hal_motor_default, hal_motor)

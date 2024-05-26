@@ -1,4 +1,14 @@
-# Block devices
-typeattribute system_block_device super_block_device_type;
+type fingerprint_device, dev_type;
+
+type hall_device, dev_type;
 
 type lirc_device, dev_type;
+
+type motor_device, dev_type;
+
+type touchfeature_device, dev_type;
+
+type ultrasound_device, dev_type;
+
+# Treat non-super block devices as super block devices for retrofit
+typeattribute system_block_device super_block_device_type;

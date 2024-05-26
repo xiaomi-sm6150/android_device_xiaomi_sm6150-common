@@ -1,3 +1,1 @@
-attribute hal_motor;
-attribute hal_motor_client;
-attribute hal_motor_server;
+hal_attribute_lineage(motor)

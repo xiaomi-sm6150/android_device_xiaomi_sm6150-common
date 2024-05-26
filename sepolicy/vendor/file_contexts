@@ -1,74 +1,74 @@
 # Audio
-/dev/socket/audio_hw_socket                                          u:object_r:audio_socket:s0
-
-# Battery secret
-/vendor/bin/batterysecret                                            u:object_r:batterysecret_exec:s0
+/dev/socket/audio_hw_socket                                                                         u:object_r:vendor_audio_socket:s0
 
 # Block devices
-/dev/block/mmcblk0p1                                                 u:object_r:sdcard_block_device:s0
-/dev/block/platform/soc/1d84000\.ufshc/by-name/cust                  u:object_r:system_block_device:s0
-/dev/block/platform/soc/1d84000\.ufshc/by-name/system                u:object_r:system_block_device:s0
-/dev/block/platform/soc/1d84000\.ufshc/by-name/vendor                u:object_r:system_block_device:s0
-/dev/block/platform/soc/7c4000\.sdhci/by-name/cust                   u:object_r:system_block_device:s0
-/dev/block/platform/soc/7c4000\.sdhci/by-name/system                 u:object_r:system_block_device:s0
-/dev/block/platform/soc/7c4000\.sdhci/by-name/vendor                 u:object_r:system_block_device:s0
+/dev/block/mmcblk0p1                                                                                u:object_r:sdcard_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/cust                                                 u:object_r:system_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/system                                               u:object_r:system_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/vendor                                               u:object_r:system_block_device:s0
+/dev/block/platform/soc/7c4000\.sdhci/by-name/cust                                                  u:object_r:system_block_device:s0
+/dev/block/platform/soc/7c4000\.sdhci/by-name/system                                                u:object_r:system_block_device:s0
+/dev/block/platform/soc/7c4000\.sdhci/by-name/vendor                                                u:object_r:system_block_device:s0
 
 # Camera
-/mnt/vendor/persist/camera(/.*)?                                     u:object_r:vendor_persist_camera_file:s0
+/mnt/vendor/persist/camera(/.*)?                                                                    u:object_r:vendor_persist_camera_file:s0
+
+# Charger
+/vendor/bin/batterysecret                                                                           u:object_r:vendor_batterysecret_exec:s0
 
 # Data files
-/data/per_boot(/.*)?                                                 u:object_r:per_boot_file:s0
+/data/per_boot(/.*)?                                                                                u:object_r:per_boot_file:s0
 
 # Display
-/dev/xiaomi-touch                                                    u:object_r:touchfeature_device:s0
-/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/soc:qcom,dsi-display/dc_enable             u:object_r:sysfs_anti_flicker:s0
-/sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui                u:object_r:vendor_sysfs_fod:s0
-/sys/devices/platform/soc/soc:qcom,dsi-display/hbm                   u:object_r:sysfs_hbm:s0
-/sys/devices/platform/soc/soc:qcom,dsi-display/doze_mode             u:object_r:sysfs_doze:s0
+/dev/xiaomi-touch                                                                                   u:object_r:touchfeature_device:s0
+/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info    u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/soc:qcom,dsi-display/dc_enable                                            u:object_r:sysfs_anti_flicker:s0
+/sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui                                               u:object_r:vendor_sysfs_fod:s0
+/sys/devices/platform/soc/soc:qcom,dsi-display/hbm                                                  u:object_r:sysfs_hbm:s0
+/sys/devices/platform/soc/soc:qcom,dsi-display/doze_mode                                            u:object_r:sysfs_doze:s0
 
 # Fingerprint
-/dev/fortsense_fp                                                    u:object_r:fingerprint_device:s0
-/dev/goodix_fp                                                       u:object_r:fingerprint_device:s0
-/data/vendor/fortsense(/.*)?                                         u:object_r:fingerprint_data_file:s0
-/data/vendor/fpc(/.*)?                                               u:object_r:fingerprint_data_file:s0
-/data/vendor/fpdump(/.*)?                                            u:object_r:fingerprint_data_file:s0
-/data/vendor/goodix(/.*)?                                            u:object_r:fingerprint_data_file:s0
-/sys/devices/virtual/touch/tp_dev/fp_state                           u:object_r:vendor_sysfs_sensors:s0
+/dev/fortsense_fp                                                                                   u:object_r:fingerprint_device:s0
+/dev/goodix_fp                                                                                      u:object_r:fingerprint_device:s0
+/data/vendor/fortsense(/.*)?                                                                        u:object_r:fingerprint_data_file:s0
+/data/vendor/fpc(/.*)?                                                                              u:object_r:fingerprint_data_file:s0
+/data/vendor/fpdump(/.*)?                                                                           u:object_r:fingerprint_data_file:s0
+/data/vendor/goodix(/.*)?                                                                           u:object_r:fingerprint_data_file:s0
+/sys/devices/virtual/touch/tp_dev/fp_state                                                          u:object_r:vendor_sysfs_sensors:s0
 
 # HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
-/vendor/bin/hw/android\.hardware\.light-service\.xiaomi                    u:object_r:hal_light_default_exec:s0
-/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.xiaomi_sm6150    u:object_r:hal_lineage_livedisplay_qti_exec:s0
-/vendor/bin/hw/vendor\.xiaomi\.hardware\.motor@1\.0-service                u:object_r:hal_motor_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi      u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.light-service\.xiaomi                                             u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.xiaomi_sm6150                             u:object_r:hal_lineage_livedisplay_qti_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.motor@1\.0-service                                         u:object_r:hal_motor_default_exec:s0
 
 # IR
-/dev/lirc[0-9]+                                                      u:object_r:lirc_device:s0
-/dev/spidev[0-9]\.1                                                  u:object_r:lirc_device:s0
-/vendor/bin/hw/android\.hardware\.ir-service\.xiaomi                 u:object_r:hal_ir_default_exec:s0
+/vendor/bin/hw/android\.hardware\.ir-service\.xiaomi                                                u:object_r:hal_ir_default_exec:s0
+
+# IR devices
+/dev/lirc[0-9]+                                                                                     u:object_r:lirc_device:s0
+/dev/spidev[0-9]\.1                                                                                 u:object_r:lirc_device:s0
 
 # Motor
-/dev/akm09970                                                        u:object_r:hall_device:s0
-/dev/drv8846_dev                                                     u:object_r:motor_device:s0
+/dev/akm09970                                                                                       u:object_r:hall_device:s0
+/dev/drv8846_dev                                                                                    u:object_r:motor_device:s0
 
 # NFC
-/vendor/bin/hw/android\.hardware\.nfc-service\.nxp                   u:object_r:hal_nfc_default_exec:s0
+/vendor/bin/hw/android\.hardware\.nfc-service\.nxp                                                  u:object_r:hal_nfc_default_exec:s0
 
 # Persist subsystem
-/mnt/vendor/persist/subsys(/.*)?                                     u:object_r:persist_subsys_file:s0
+/mnt/vendor/persist/subsys(/.*)?                                                                    u:object_r:vendor_persist_subsys_file:s0
 
 # Proximity
-/dev/elliptic0                                                       u:object_r:vendor_elliptic_device:s0
-/sys/bus/iio/devices                                                 u:object_r:vendor_sysfs_iio:s0
-/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-04/c440000.qcom,spmi:qcom,pm6150l@4:vadc@3100/iio:device1(/.*)? u:object_r:vendor_sysfs_iio:s0
-/sys/devices/platform/us_prox.0/iio:device2(/.*)?                    u:object_r:vendor_sysfs_iio:s0
+/dev/elliptic[0-9]+                                                                                 u:object_r:ultrasound_device:s0
+/dev/mius(.*)?                                                                                      u:object_r:ultrasound_device:s0
 
 # Remosaic
-/vendor/bin/remosaic_daemon                                          u:object_r:remosaic_daemon_exec:s0
+/vendor/bin/remosaic_daemon                                                                         u:object_r:remosaic_daemon_exec:s0
 
 # WiFi
-/vendor/bin/nv_mac                                                   u:object_r:vendor_wcnss_service_exec:s0
+/vendor/bin/nv_mac                                                                                  u:object_r:vendor_wcnss_service_exec:s0
 
 # Xiaomi thermal daemon
-/vendor/bin/mi_thermald                                              u:object_r:mi_thermald_exec:s0
-/data/vendor/thermal(/.*)?                                           u:object_r:thermal_data_file:s0
+/vendor/bin/mi_thermald                                                                             u:object_r:vendor_mi_thermald_exec:s0
+/data/vendor/thermal(/.*)?                                                                          u:object_r:vendor_thermal_data_file:s0
