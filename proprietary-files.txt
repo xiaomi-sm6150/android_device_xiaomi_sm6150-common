@@ -1,4 +1,4 @@
-# These proprietary files are extracted from Redmi Note 12 Pro 4G (codenamed `sweet_k6a`) OS1.0.5.0.THGMIXM, unless pinned
+# These proprietary files are extracted from Redmi Note 12 Pro 4G (codenamed `sweet_k6a`) OS1.0.6.0.THGMIXM, unless pinned
 
 # ADSP
 -vendor/bin/adsprpcd
@@ -499,6 +499,7 @@ vendor/radio/qcril_database/upgrade/38_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/39_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
 vendor/radio/qcril_database/upgrade/40_version_update_ecc_table.sql
+vendor/radio/qcril_database/upgrade/41_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
