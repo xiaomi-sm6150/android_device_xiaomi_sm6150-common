@@ -2,7 +2,6 @@
 
 # Current blobs with ELF checks disabled:
 # imsdatadaemon, libcne, libwqe, lowi-server depend on libwpa_client, which is a gnu makefile target
-# libOmxVpp depends on libOmxCore, which is a gnu makefile target
 
 # ADSP
 vendor/bin/adsprpcd
@@ -355,17 +354,6 @@ vendor/lib/libsmwrapper.so
 vendor/bin/vppservice
 vendor/etc/configstore/vpp.configstore.xml
 vendor/etc/init/vppservice.rc
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxAlacDec.so
-vendor/lib/libOmxAmrDec.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxApeDec.so
-vendor/lib/libOmxDsdDec.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxVpp.so;DISABLE_CHECKELF
-vendor/lib/libOmxWmaDec.so
-vendor/lib/libdsd2pcm.so
 vendor/lib/libmmosal.so;MODULE_SUFFIX=_vendor
 vendor/lib/libvppclient.so
 vendor/lib/libvpphvx.so
