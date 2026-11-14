@@ -43,6 +43,10 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl
 
+# AIDL audio HAL (A17 audioserver only accepts AIDL): AOSP tinyalsa primary module, card 0 dev 0
+PRODUCT_PACKAGES += \
+    com.android.hardware.audio
+
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.usb.default \
