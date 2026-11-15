@@ -40,8 +40,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
-    android.hardware.audio.service \
-    android.hardware.bluetooth.audio-impl
+    android.hardware.audio.service
 
 # AIDL audio HAL (A17 audioserver only accepts AIDL): AOSP tinyalsa primary module, card 0 dev 0
 PRODUCT_PACKAGES += \
