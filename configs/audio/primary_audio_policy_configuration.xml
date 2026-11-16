@@ -17,6 +17,7 @@
 <!-- Default Primary Audio HAL Module Audio Policy Configuration include file -->
 <module name="primary" halVersion="3.0">
     <attachedDevices>
+        <item>Earpiece</item>
         <item>Speaker</item>
         <item>Built-In Mic</item>
         <item>Telephony Tx</item>
@@ -75,7 +76,13 @@
         </mixPort>
    </mixPorts>
    <devicePorts>
+        <devicePort tagName="Earpiece" type="AUDIO_DEVICE_OUT_EARPIECE" role="sink">
+        </devicePort>
         <devicePort tagName="Speaker" type="AUDIO_DEVICE_OUT_SPEAKER" role="sink">
+        </devicePort>
+        <devicePort tagName="Wired Headset" type="AUDIO_DEVICE_OUT_WIRED_HEADSET" role="sink">
+        </devicePort>
+        <devicePort tagName="Wired Headphones" type="AUDIO_DEVICE_OUT_WIRED_HEADPHONE" role="sink">
         </devicePort>
         <devicePort tagName="Telephony Tx" type="AUDIO_DEVICE_OUT_TELEPHONY_TX" role="sink">
             <gains>
@@ -87,15 +94,23 @@
         </devicePort>
         <devicePort tagName="Telephony Rx" type="AUDIO_DEVICE_IN_TELEPHONY_RX" role="source">
         </devicePort>
+        <devicePort tagName="Wired Headset Mic" type="AUDIO_DEVICE_IN_WIRED_HEADSET" role="source">
+        </devicePort>
 
         <devicePort tagName="FM Tuner" type="AUDIO_DEVICE_IN_FM_TUNER" role="source">
         </devicePort>
     </devicePorts>
     <routes>
+        <route type="mix" sink="Earpiece"
+               sources="primary output"/>
         <route type="mix" sink="Speaker"
                sources="primary output,compressed_offload,mmap_no_irq_out"/>
+        <route type="mix" sink="Wired Headset"
+               sources="primary output,compressed_offload"/>
+        <route type="mix" sink="Wired Headphones"
+               sources="primary output,compressed_offload"/>
         <route type="mix" sink="primary input"
-               sources="Built-In Mic"/>
+               sources="Built-In Mic,Wired Headset Mic"/>
         <route type="mix" sink="mmap_no_irq_in"
                sources="Built-In Mic"/>
 
