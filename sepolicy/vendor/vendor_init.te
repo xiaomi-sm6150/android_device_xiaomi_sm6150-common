@@ -1,1 +1,4 @@
 set_prop(vendor_init, vendor_fp_prop)
+
+# vendor.ims.activesub -> vendor.audio.voice.sim_mask trigger (acdb_voice_helper.rc)
+get_prop(vendor_init, vendor_ims_prop)
