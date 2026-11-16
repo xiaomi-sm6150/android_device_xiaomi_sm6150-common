@@ -17,12 +17,15 @@
 #define LOG_TAG "AHAL_VoiceCall"
 
 #include <algorithm>
+#include <array>
 #include <cmath>
 #include <iterator>
 
+#include <android-base/file.h>
 #include <android-base/logging.h>
 #include <android-base/properties.h>
 #include <android-base/stringprintf.h>
+#include <android-base/strings.h>
 #include <tinyalsa/mixer.h>
 #include <tinyalsa/pcm.h>
 
@@ -40,8 +43,36 @@ namespace aidl::android::hardware::audio::core::sm6150 {
 namespace {
 // USECASE_VOICEMMODE1_CALL / USECASE_VOICEMMODE2_CALL of the stock audio_platform_info.xml
 // (msm-pcm-voice front ends). On a dual-SIM phone the modem attaches the call of SIM 1 to the
-// MMode1 session and the call of SIM 2 to MMode2 (see voiceSessionMask()).
-constexpr unsigned int kVoiceDevices[2] = {2, 19};
+// MMode1 session and the call of SIM 2 to MMode2 (see voiceSessionMask()). The PCM device numbers
+// depend on the machine driver's DAI link order (VoiceMMode2 is device 19 on 4.14 and 15 on
+// 6.1), so they are looked up by name; these are the 4.14 numbers, used if the lookup fails.
+constexpr unsigned int kDefaultVoiceDevices[2] = {2, 19};
+
+// Returns the PCM device of the VoiceMMode<session + 1> front end on card 0.
+unsigned int voicePcmDevice(int session) {
+    static const auto devices = [] {
+        std::array<unsigned int, 2> result = {kDefaultVoiceDevices[0], kDefaultVoiceDevices[1]};
+        std::string pcms;
+        if (!::android::base::ReadFileToString("/proc/asound/pcm", &pcms)) {
+            LOG(WARNING) << "voicePcmDevice: cannot read /proc/asound/pcm";
+            return result;
+        }
+        // Lines look like "00-15: VoiceMMode2 (*) :  : playback 1 : capture 1".
+        for (const auto& line : ::android::base::Split(pcms, "\n")) {
+            unsigned int card, device;
+            char name[32] = {};
+            if (sscanf(line.c_str(), "%u-%u: %31s", &card, &device, name) != 3 || card != 0) {
+                continue;
+            }
+            for (int i = 0; i < 2; ++i) {
+                if (name == "VoiceMMode" + std::to_string(i + 1)) result[i] = device;
+            }
+        }
+        LOG(INFO) << "voicePcmDevice: VoiceMMode1 " << result[0] << ", VoiceMMode2 " << result[1];
+        return result;
+    }();
+    return devices[session];
+}
 constexpr int kMaxVolumeIndex = 5;  // stock HAL default (MAX_VOL_INDEX)
 constexpr unsigned int kAllSessionsVsid = 0xFFFFFFFF;
 constexpr unsigned int kVolumeRampMs = 20;
@@ -277,14 +308,14 @@ void VoiceCall::startLocked() {
     for (int i = 0; i < 2; ++i) {
         if (!(mSessions & (1 << i))) continue;
         // Same order as the stock HAL: TX first.
-        mPcmTx[i] = openVoicePcm(kVoiceDevices[i], PCM_IN);
-        mPcmRx[i] = openVoicePcm(kVoiceDevices[i], PCM_OUT);
+        mPcmTx[i] = openVoicePcm(voicePcmDevice(i), PCM_IN);
+        mPcmRx[i] = openVoicePcm(voicePcmDevice(i), PCM_OUT);
         if (mPcmTx[i] != nullptr && pcm_start(mPcmTx[i]) != 0) {
-            LOG(ERROR) << __func__ << ": pcm_start tx " << kVoiceDevices[i]
+            LOG(ERROR) << __func__ << ": pcm_start tx " << voicePcmDevice(i)
                        << " failed: " << pcm_get_error(mPcmTx[i]);
         }
         if (mPcmRx[i] != nullptr && pcm_start(mPcmRx[i]) != 0) {
-            LOG(ERROR) << __func__ << ": pcm_start rx " << kVoiceDevices[i]
+            LOG(ERROR) << __func__ << ": pcm_start rx " << voicePcmDevice(i)
                        << " failed: " << pcm_get_error(mPcmRx[i]);
         }
     }
