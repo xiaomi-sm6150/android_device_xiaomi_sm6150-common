@@ -42,9 +42,11 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service
 
-# AIDL audio HAL (A17 audioserver only accepts AIDL): AOSP tinyalsa primary module, card 0 dev 0
+# AIDL audio HAL (A17 audioserver only accepts AIDL): stock implementation + the sm6150 primary module (audio/aidl)
 PRODUCT_PACKAGES += \
-    com.android.hardware.audio
+    android.hardware.audio.service-aidl.sm6150.rc \
+    com.android.hardware.audio \
+    com.xiaomi.hardware.audio
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
