@@ -101,14 +101,17 @@
         </devicePort>
     </devicePorts>
     <routes>
+        <!-- Telephony Rx / Tx device routes: call audio runs modem <-> ADSP, so the policy
+             makes device to device patches instead of a software bridge (which would capture
+             the mic on the AP and take the TX backend away from the voice session). -->
         <route type="mix" sink="Earpiece"
-               sources="primary output"/>
+               sources="primary output,Telephony Rx"/>
         <route type="mix" sink="Speaker"
-               sources="primary output,compressed_offload,mmap_no_irq_out"/>
+               sources="primary output,compressed_offload,mmap_no_irq_out,Telephony Rx"/>
         <route type="mix" sink="Wired Headset"
-               sources="primary output,compressed_offload"/>
+               sources="primary output,compressed_offload,Telephony Rx"/>
         <route type="mix" sink="Wired Headphones"
-               sources="primary output,compressed_offload"/>
+               sources="primary output,compressed_offload,Telephony Rx"/>
         <route type="mix" sink="primary input"
                sources="Built-In Mic,Wired Headset Mic"/>
         <route type="mix" sink="mmap_no_irq_in"
@@ -117,7 +120,7 @@
         <route type="mix" sink="telephony_rx"
                sources="Telephony Rx"/>
         <route type="mix" sink="Telephony Tx"
-               sources="telephony_tx"/>
+               sources="telephony_tx,Built-In Mic,Wired Headset Mic"/>
 
         <route type="mix" sink="fm_tuner"
                sources="FM Tuner"/>
