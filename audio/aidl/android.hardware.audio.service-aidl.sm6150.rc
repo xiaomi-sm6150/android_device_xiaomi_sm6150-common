@@ -1,0 +1,15 @@
+# Replaces the core HAL service of the stock com.android.hardware.audio apex (whose effect HAL
+# service stays in use) with the one of com.xiaomi.hardware.audio. Vendor init scripts are parsed
+# before the apex ones, so this definition wins and init ignores the apex's duplicate
+# vendor.audio-hal-aidl.
+service vendor.audio-hal-aidl /apex/com.xiaomi.hardware.audio/bin/hw/android.hardware.audio.service-aidl.sm6150
+    class hal
+    user audioserver
+    # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
+    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct wakelock context_hub
+    capabilities BLOCK_SUSPEND SYS_NICE
+    # setting RLIMIT_RTPRIO allows binder RT priority inheritance
+    rlimit rtprio 10 10
+    ioprio rt 4
+    task_profiles ProcessCapacityHigh HighPerformance
+    onrestart restart audioserver

@@ -1,0 +1,60 @@
+//
+// Copyright (C) 2026 The Android Open Source Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// AIDL audio HAL service for sm6150: the stock default implementation
+// (libaudioserviceexampleimpl) with this device's primary module (voice calls,
+// mixer paths, ALSA stream fixes).
+cc_binary {
+    name: "android.hardware.audio.service-aidl.sm6150",
+    relative_install_path: "hw",
+    defaults: [
+        "aidlaudioservice_defaults",
+        "latest_android_hardware_audio_core_sounddose_ndk_shared",
+        "latest_android_hardware_audio_core_ndk_shared",
+        "latest_android_hardware_bluetooth_audio_ndk_shared",
+        "latest_android_media_audio_common_types_ndk_shared",
+    ],
+    static_libs: [
+        "libaudioserviceexampleimpl",
+    ],
+    shared_libs: [
+        "android.hardware.bluetooth.audio-impl",
+        "libaudio_aidl_conversion_common_ndk",
+        "libaudioroutev2",
+        "libbluetooth_audio_session_aidl",
+        "liblog",
+        "libmedia_helper",
+        "libstagefright_foundation",
+    ],
+    // primary/PrimaryMixer.h and alsa/Mixer.h of the stock implementation.
+    include_dirs: ["hardware/interfaces/audio/aidl/default"],
+    srcs: [
+        "ModuleSm6150.cpp",
+        "PrimaryRoute.cpp",
+        "StreamAlsaMonoPipeSm6150.cpp",
+        "StreamSm6150.cpp",
+        "TelephonySm6150.cpp",
+        "VoiceCall.cpp",
+        "main.cpp",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wthread-safety",
+        "-DBACKEND_NDK",
+    ],
+    // Installed in apex com.xiaomi.hardware.audio; the init script, on /vendor, takes over the
+    // vendor.audio-hal-aidl service from the stock apex.
+    installable: false,
+}
+
+prebuilt_etc {
+    name: "android.hardware.audio.service-aidl.sm6150.rc",
+    src: "android.hardware.audio.service-aidl.sm6150.rc",
+    vendor: true,
+    relative_install_path: "init",
+}

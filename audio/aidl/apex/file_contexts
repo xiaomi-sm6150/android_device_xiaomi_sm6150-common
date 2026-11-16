@@ -1,0 +1,2 @@
+(/.*)?                                                              u:object_r:vendor_file:s0
+/bin/hw/android\.hardware\.audio\.service-aidl\.sm6150              u:object_r:hal_audio_default_exec:s0

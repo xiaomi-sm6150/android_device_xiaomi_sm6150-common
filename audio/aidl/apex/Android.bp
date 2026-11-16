@@ -1,0 +1,20 @@
+//
+// Copyright (C) 2026 The Android Open Source Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// The sm6150 core audio HAL service and its libraries. A vendor apex like the
+// stock com.android.hardware.audio, so that the bluetooth audio library does not
+// get installed on /vendor with a second copy of its VINTF fragment (the stock
+// apex already declares that HAL; a duplicate declaration stops the boot).
+apex {
+    name: "com.xiaomi.hardware.audio",
+    manifest: "manifest.json",
+    file_contexts: "file_contexts",
+    key: "com.android.hardware.key",
+    certificate: ":com.android.hardware.certificate",
+    updatable: false,
+    vendor: true,
+    binaries: ["android.hardware.audio.service-aidl.sm6150"],
+}
