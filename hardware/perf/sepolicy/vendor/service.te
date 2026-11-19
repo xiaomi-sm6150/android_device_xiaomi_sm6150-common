@@ -1,0 +1,2 @@
+# legacy-um declares the perf2 service only for lahaina
+type vendor_hal_perf2_service, hal_service_type, service_manager_type;

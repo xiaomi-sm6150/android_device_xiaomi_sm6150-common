@@ -1,4 +1,4 @@
-# legacy-um declares the perf2 service (lahaina), but no server or client rules
+# Server and client rules for perf2 (legacy-um has none)
 hal_attribute_service(vendor_hal_perf, vendor_hal_perf2_service)
 binder_use(vendor_hal_perf_server)
 binder_use(vendor_hal_perf_client)
