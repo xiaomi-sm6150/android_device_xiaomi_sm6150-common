@@ -1,0 +1,2 @@
+# 6.1: msm_performance lives in /sys/kernel (4.14: /sys/module)
+genfscon sysfs /kernel/msm_performance u:object_r:vendor_sysfs_msm_perf:s0
