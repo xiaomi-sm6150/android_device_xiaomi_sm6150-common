@@ -1,0 +1,27 @@
+# QTI perf HAL (perf2) from AOSPA calcite: ThankYouMario/proprietary_vendor_qcom_common
+# 220d639a1222c5c5a818d01360482c93af048e16 (LA.QISI.17.0.r1-02900-qssi.0), list from
+# AOSPA/android_device_qcom_common calcite df812783f7f38702769c2b32f927c6ea1ea9d78a vendor/perf.
+# Kept in this tree, not extracted from the stock firmware.
+
+vendor/bin/hw/vendor.qti.hardware.perf2-hal-service|be086e5768ec87fac63b838fbda26f1ee838bd39
+vendor/etc/init/vendor.qti.hardware.perf2-hal-service.rc|fc1cd8acaa4c8c7760c3da368685bbfd870919b8
+vendor/etc/vintf/manifest/vendor.qti.hardware.perf2.xml|e2839531d48d54f2bd0c61a8a141c794fecf5fa2
+vendor/lib64/libadaptlaunch.so|ab5fd1ae769d7c67d4b327f7f945429aa50feaa3
+vendor/lib64/libappclassifier.so|f357710fd15c421151627d2b757f1683c10056af
+vendor/lib64/liblearningmodule.so|d614ed07648f8d2134e14a5f0b5fa41e16349c5d
+vendor/lib64/liblmthermallistner.so|a3e763d274195d18aeee6d71c8ec83e2f4506946
+vendor/lib64/liblmutils-ns.so|6900fa8cbd532e6e24fd6de61656b4300aa983d4
+vendor/lib64/libmeters-ns.so|eef4c3ecbe38aa69b26b41b885392c85ee55fc53
+vendor/lib64/libmeters.so|423182ecdaabea45d0b0a65f799c39c5d76d192d
+vendor/lib64/libperfconfig.so|e697a84552aef8ea82f81ca086c70b81db646aff
+vendor/lib64/libperfgluelayer.so|bb2f4854fa9fdd075841c78413a4a92ebc244afc
+vendor/lib64/libperfioctl.so|e2805d7b7e38f40bb19b49cee384d164f82437f5
+vendor/lib64/libprefapps.so|f0fe2b8bd21c764db5522e9eb882768fc42021ff
+vendor/lib64/libq-perflog.so|afff6494a582b1a7d19d043f89b7c839d54e0050
+vendor/lib64/libqti-perfd-client.so|d9f52a897f1a5e23bf53d3f27d0c2bf107e3f39b
+vendor/lib64/libqti-perfd.so|fb668117e57fec1258e444b5424fec49e84b5896
+vendor/lib64/libqti-util.so|c5864c3466c6f3f1e25f71750c0571d041f7e8ed
+vendor/lib64/libqti-utils.so|e365394906cd423783983d75352a48af2ae2f5dd
+vendor/lib64/libsplh.so|010dff32788c22d329a16e29b2042a514b03d760
+vendor/lib64/vendor.qti.hardware.perf2-V1-ndk.so|f891918a497a55b0b6ec12eb94a5d3172d76c622
+vendor/lib64/vendor.qti.memory.pasrmanager-V1-ndk.so|0c4fad4b624c2795cf93e49bbad9def54ddf9353
