@@ -288,6 +288,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Audio: the 6.1 kernel's compress offload ABI (codec options in
+# options.generic, passthrough and flags in snd_codec.reserved)
+$(call soong_config_set,qtiaudio,feature_gki,true)
+
 # Perf
 $(call inherit-product, $(LOCAL_PATH)/hardware/perf/perf.mk)
 
