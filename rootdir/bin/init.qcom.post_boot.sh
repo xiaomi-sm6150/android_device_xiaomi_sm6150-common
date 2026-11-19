@@ -302,7 +302,4 @@ esac
 # WALT starts in full throttle boost; end it now that boot is done.
 echo 0 > /proc/sys/walt/sched_boost
 
-# Enable PowerHAL hint processing
-setprop vendor.powerhal.init 1
-
 setprop vendor.post_boot.parsed 1
