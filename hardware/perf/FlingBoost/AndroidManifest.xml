@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The PixelOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.pixelos.flingboost"
+    android:sharedUserId="android.uid.system"
+    coreApp="true">
+
+    <application
+        android:name=".FlingBoostApp"
+        android:label="FlingBoost"
+        android:persistent="true"
+        android:directBootAware="true"
+        android:defaultToDeviceProtectedStorage="true"
+        android:allowBackup="false"
+        android:hasCode="true" />
+</manifest>

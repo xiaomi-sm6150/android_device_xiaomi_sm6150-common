@@ -7,4 +7,7 @@
     <!-- AOD wallpaper -->
     <bool name="config_dozeSupportsAodWallpaper">true</bool>
 
+    <!-- Report OverScroller flings to the flingboost service -->
+    <bool name="config_flingBoost">true</bool>
+
 </resources>

@@ -1,0 +1,2 @@
+# system_server's own scrolling views report flings to FlingBoost
+allow system_server flingboost_service:service_manager find;

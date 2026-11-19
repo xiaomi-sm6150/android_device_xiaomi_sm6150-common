@@ -1,0 +1,2 @@
+# FlingBoost runs as a system_app and registers the flingboost service
+allow system_app flingboost_service:service_manager { add find };

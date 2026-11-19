@@ -38,6 +38,10 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(PERF_PATH)/configs/perf,$(TARGET_COPY_OUT_VENDOR)/etc/perf) \
     $(call find-copy-subdir-files,*,$(PERF_PATH)/configs/lm,$(TARGET_COPY_OUT_VENDOR)/etc/lm)
 
+# Fling boost service for OverScroller (config_flingBoost)
+PRODUCT_PACKAGES += \
+    FlingBoost
+
 # Properties
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.perf-hal.ver=3.0

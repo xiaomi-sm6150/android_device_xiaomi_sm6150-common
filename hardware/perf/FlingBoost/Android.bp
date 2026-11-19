@@ -1,0 +1,21 @@
+//
+// SPDX-FileCopyrightText: The PixelOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Registers the "flingboost" service that OverScroller reports flings to
+// (frameworks/base android.widget.FlingBoost, enabled by config_flingBoost)
+// and turns them into perf2 fling boosts. Also keeps perf2 told the panel
+// refresh rate, which it would otherwise read from the AIDL DisplayConfig
+// service the display stack doesn't provide.
+android_app {
+    name: "FlingBoost",
+    srcs: ["src/**/*.java"],
+    certificate: "platform",
+    platform_apis: true,
+    system_ext_specific: true,
+    privileged: true,
+    optimize: {
+        enabled: false,
+    },
+}
