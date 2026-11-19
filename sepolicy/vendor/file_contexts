@@ -67,3 +67,6 @@
 # Xiaomi thermal daemon
 /vendor/bin/mi_thermald                                              u:object_r:mi_thermald_exec:s0
 /data/vendor/thermal(/.*)?                                           u:object_r:thermal_data_file:s0
+
+# 6.1 kernel: eMMC RPMB is a character device
+/dev/mmcblk0rpmb                                                      u:object_r:vendor_rpmb_device:s0
