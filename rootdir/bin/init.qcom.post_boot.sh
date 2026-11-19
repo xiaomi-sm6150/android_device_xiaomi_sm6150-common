@@ -93,26 +93,21 @@ fi
 case "$soc_id" in
         "355" | "369" | "377" | "380" | "384" )
 
-    # Setting b.L scheduler parameters
-    echo 25 > /proc/sys/kernel/sched_downmigrate_boosted
-    echo 25 > /proc/sys/kernel/sched_upmigrate_boosted
-    echo 85 > /proc/sys/kernel/sched_downmigrate
-    echo 95 > /proc/sys/kernel/sched_upmigrate
+    # b.L scheduler parameters: the 6.1 WALT defaults (up 95, down 85)
+    # match; the *_boosted variants no longer exist.
 
     # configure governor settings for little cluster
-    echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-    echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
-    echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
+    echo "walt" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/walt/up_rate_limit_us
+    echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/walt/down_rate_limit_us
 
     # configure governor settings for big cluster
-    echo "schedutil" > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
-    echo 500 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us
-    echo 20000 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us
+    echo "walt" > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+    echo 500 > /sys/devices/system/cpu/cpu6/cpufreq/walt/up_rate_limit_us
+    echo 20000 > /sys/devices/system/cpu/cpu6/cpufreq/walt/down_rate_limit_us
 
-    # Configure default schedTune value for foreground/top-app
-    echo 1 > /dev/stune/foreground/schedtune.prefer_idle
-    echo 10 > /dev/stune/top-app/schedtune.boost
-    echo 1 > /dev/stune/top-app/schedtune.prefer_idle
+    # 6.1 has no schedtune: top-app/foreground use uclamp from the task
+    # profiles.
 
     # Set Memory parameters
     configure_memory_parameters
@@ -194,26 +189,21 @@ esac
 case "$soc_id" in
     "365" | "366" )
 
-    # Setting b.L scheduler parameters
-    echo 25 > /proc/sys/kernel/sched_downmigrate_boosted
-    echo 25 > /proc/sys/kernel/sched_upmigrate_boosted
-    echo 85 > /proc/sys/kernel/sched_downmigrate
-    echo 95 > /proc/sys/kernel/sched_upmigrate
+    # b.L scheduler parameters: the 6.1 WALT defaults (up 95, down 85)
+    # match; the *_boosted variants no longer exist.
 
     # configure governor settings for little cluster
-    echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-    echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
-    echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
+    echo "walt" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/walt/up_rate_limit_us
+    echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/walt/down_rate_limit_us
 
     # configure governor settings for big cluster
-    echo "schedutil" > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
-    echo 500 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us
-    echo 20000 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us
+    echo "walt" > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+    echo 500 > /sys/devices/system/cpu/cpu6/cpufreq/walt/up_rate_limit_us
+    echo 20000 > /sys/devices/system/cpu/cpu6/cpufreq/walt/down_rate_limit_us
 
-    # Configure default schedTune value for foreground/top-app
-    echo 1 > /dev/stune/foreground/schedtune.prefer_idle
-    echo 10 > /dev/stune/top-app/schedtune.boost
-    echo 1 > /dev/stune/top-app/schedtune.prefer_idle
+    # 6.1 has no schedtune: top-app/foreground use uclamp from the task
+    # profiles.
 
     # Set Memory parameters
     configure_memory_parameters
@@ -308,6 +298,9 @@ case "$soc_id" in
     echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
     ;;
 esac
+
+# WALT starts in full throttle boost; end it now that boot is done.
+echo 0 > /proc/sys/walt/sched_boost
 
 # Enable PowerHAL hint processing
 setprop vendor.powerhal.init 1
