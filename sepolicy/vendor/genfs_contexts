@@ -140,3 +140,25 @@ genfscon sysfs /devices/subsys4/name u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/subsys5/name u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/subsys6/name u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/subsys7/name u:object_r:vendor_sysfs_ssr:s0
+
+# 6.1 kernel: wakeup sources under 6.1 device names
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm6150@0:rtc@6000/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm6150@0:rtc@6000/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm6150@0:pon@800/c440000.qcom,spmi:qcom,pm6150@0:pon@800:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm6150@0:pon@800/c440000.qcom,spmi:qcom,pm6150@0:pon@800:resin/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:gpio-keys/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/62400000.remoteproc-adsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/8300000.remoteproc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4080000.remoteproc-mpss/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1e40000.ipa/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/input/input3/wakeup u:object_r:sysfs_wakeup:s0
+
+# 6.1 kernel: extcon
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm6150@0:qcom,qpnp-smb5/extcon u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm6150@0:qcom,usb-pdphy@1700/extcon u:object_r:sysfs_extcon:s0
+
+# 6.1 kernel: eMMC is blk-mq
+genfscon sysfs /devices/platform/soc/7c4000.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/queue/discard_max_bytes u:object_r:vendor_sysfs_mmc_host:s0
+genfscon sysfs /devices/platform/soc/7c4000.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mq/0/nr_tags u:object_r:vendor_sysfs_mmc_host:s0
