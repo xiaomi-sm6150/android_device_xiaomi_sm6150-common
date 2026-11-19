@@ -433,6 +433,10 @@ PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink \
     firmware_WCNSS_qcom_cfg.ini_symlink
 
+# HWUI: render with Skia on Vulkan
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.renderer=skiavk
+
 # ZRAM writeback
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.zram.mark_idle_delay_mins=60 \
