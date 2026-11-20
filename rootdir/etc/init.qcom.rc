@@ -241,8 +241,13 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     oneshot
     task_profiles ServiceCapacityLow
 
+# The 6.1 kernel drives WCN3990 with upstream ath10k, which does the WLAN
+# firmware QMI handshake itself. cnss-daemon (for the downstream icnss
+# driver) talking to the same modem WLFW service mid-handshake made the
+# modem's wlan_process assert and took the modem down on every boot.
 service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
+    disabled
     user system
     group system inet net_admin wifi
     capabilities NET_ADMIN
