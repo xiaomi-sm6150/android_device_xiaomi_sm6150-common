@@ -56,7 +56,14 @@
 /dev/mius(.*)?                                                       u:object_r:vendor_ultrasound_device:s0
 /sys/bus/iio/devices                                                 u:object_r:vendor_sysfs_iio:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-04/c440000.qcom,spmi:qcom,pm6150l@4:vadc@3100/iio:device1(/.*)? u:object_r:vendor_sysfs_iio:s0
-/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-04/c440000.qcom,spmi:qcom,pm6150l@4:vadc@3100/iio:device1(/.*)? u:object_r:vendor_sysfs_iio:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-04/c440000.qcom,spmi:qcom,pm6150l@4:vadc@3100/iio:device[0-9]+(/.*)? u:object_r:vendor_sysfs_iio:s0
+# 6.1 kernel: hvdcp_opti (also the QG daemon) finds the charger and the fuel
+# gauge by the name of every IIO device and stops itself on the first one it
+# cannot read; the charger/QG channels are read and written like the 4.14
+# main/bms power supplies.
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm6150@0:vadc@3100/iio:device[0-9]+(/.*)? u:object_r:vendor_sysfs_iio:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm6150@0:qcom,qpnp-smb5/iio:device[0-9]+(/.*)? u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm6150@0:qpnp,qg/iio:device[0-9]+(/.*)? u:object_r:vendor_sysfs_battery_supply:s0
 /sys/devices/platform/us_prox.0/iio:device2(/.*)?                    u:object_r:vendor_sysfs_iio:s0
 
 # Remosaic

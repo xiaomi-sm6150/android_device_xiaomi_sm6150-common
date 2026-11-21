@@ -1,3 +1,8 @@
 recovery_only(`
     domain_trans(init, rootfs, vendor_hvdcp)
 ')
+
+# 6.1 kernel: the charger and the fuel gauge are IIO devices; hvdcp_opti
+# scans /sys/bus/iio/devices and reads every device name.
+allow vendor_hvdcp vendor_sysfs_iio:dir r_dir_perms;
+allow vendor_hvdcp vendor_sysfs_iio:{ file lnk_file } r_file_perms;
