@@ -50,6 +50,8 @@ blob_fixups: blob_fixups_user_type = {
         .apktool_patch('blob-patches/WfdCommon.patch'),
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
+    'vendor/lib64/libsdmextension_qti.so': blob_fixup()
+        .fix_soname(),
     'vendor/lib64/libdpps.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     ('vendor/lib64/mediadrm/libwvdrmengine.so', 'vendor/lib64/libwvhidl.so'): blob_fixup()

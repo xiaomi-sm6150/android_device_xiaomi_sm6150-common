@@ -1,0 +1,20 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "libsdmextension",
+    vendor: true,
+    srcs: ["sdmextension.cpp"],
+    header_libs: ["display_headers"],
+    shared_libs: [
+        "libdl",
+        "liblog",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+    ],
+}
